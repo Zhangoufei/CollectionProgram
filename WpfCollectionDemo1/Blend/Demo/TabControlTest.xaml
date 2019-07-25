@@ -1,0 +1,23 @@
+﻿<Page x:Class="Blend.Demo.TabControlTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TabControlTest">
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="你好标题1" >
+                <TextBlock Text="标题" />
+            </TabItem>
+            <TabItem Header="你好标题2" >
+                <TextBlock Text="标题2" />
+            </TabItem>
+            <TabItem  Header="你好标题3" >
+                <TextBlock Text="标题3" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

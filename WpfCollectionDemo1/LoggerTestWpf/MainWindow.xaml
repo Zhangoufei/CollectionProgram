@@ -1,0 +1,16 @@
+﻿<Window x:Class="LoggerTestWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoggerTestWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <UniformGrid>
+            <Button Content="点击添加日志" Click="Button_Click" />
+            <Button Content="隐藏窗口" Click="Button_Click_1" />
+            <Button Content="显示窗口" Click="Button_Click_2" />
+        </UniformGrid>
+    </Grid>
+</Window>

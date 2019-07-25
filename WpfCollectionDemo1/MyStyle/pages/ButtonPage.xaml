@@ -1,0 +1,33 @@
+﻿<Page x:Class="MyStyle.Styles.ButtonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:locals="clr-namespace:MyStyle.Styles"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ButtonPage">
+    <Grid>
+        <UniformGrid>
+            <Button Content="按钮样式1" Style="{DynamicResource ButtonStyle1}"  />
+            <locals:MyButtonStyle Content="自定义按钮使用依赖属性"   Style="{StaticResource MyButton}"  MyBackgroundPress="Azure" />
+            <Button Content="按钮样式3"  Style="{StaticResource MyButtonStyleDemo1}" />
+            <Button Content="按钮模板修改内联定义"  >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="定义为资源" Style="{DynamicResource ButtonStyle2}" />
+
+            <Button Content="扩展控件" />
+
+            <locals:MyButtonStyleCommon Content="扩展控件" Background="Aqua" PressedForeground="BlueViolet" PressedBackground="Blue" MouseOverBackground="Red" CornerRadius="15 0 0 0"    />
+
+            <Button Content="按钮的样式"  Style="{StaticResource ButtonStylesDemo}" />
+
+            <locals:MyButtonStyleCommon Content="按钮下沉效果"  Background="Aqua" PressedForeground="BlueViolet" PressedBackground="Blue" MouseOverBackground="Red" CornerRadius="5"  ClickStyle="Sink"  />
+        </UniformGrid>
+    </Grid>
+</Page>

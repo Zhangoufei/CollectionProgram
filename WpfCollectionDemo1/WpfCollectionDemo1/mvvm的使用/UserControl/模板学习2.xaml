@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfCollectionDemo1.mvvm的使用.UserControl.模板学习2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCollectionDemo1.mvvm的使用.UserControl"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="模板学习2">
+    <Page.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="Cyan" />
+                            <GradientStop Offset="1" Color="LightCyan" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="80" Height="80">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="Yellow" />
+                            <GradientStop Offset="1" Color="Transparent" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid>
+            <StackPanel>
+                <Button Content="Hi,WPF" Template="{DynamicResource ButtonControlTemplate1}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

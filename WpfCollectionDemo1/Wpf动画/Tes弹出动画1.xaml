@@ -1,0 +1,213 @@
+﻿<Window x:Class="Wpf动画.Tes弹出动画1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf动画"
+        mc:Ignorable="d"
+      WindowStyle="None"    
+     Name="DW1"   Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowState="Normal" >
+    <Window.Resources>
+        <!--此样式能去除按钮点击后的虚线框-->
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="-2" StrokeThickness="0" Stroke="Red" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--原始旋转出来样例-->
+        <Storyboard x:Key="showDW">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="Opacity"  
+                        From="0.2" To="1" Duration="0:0:2.5">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[1].Angle"  
+                        From="70" To="0" Duration="0:0:2" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        From="0" To="1" Duration="0:0:2"   
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="0" To="1" Duration="0:0:2"   
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        To="0.98" BeginTime="0:0:2" Duration="0:0:0.05"   
+                        DecelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        To="0.98" BeginTime="0:0:2" Duration="0:0:0.05"   
+                        DecelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        To="1" BeginTime="0:0:2.05" Duration="0:0:0.2"    
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"                
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        To="1" BeginTime="0:0:2.05" Duration="0:0:0.2"   
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+        </Storyboard>
+        <!--原始的旋转回去样例-->
+        <Storyboard x:Key="closeDW">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="RenderTransform.Children[1].Angle"  
+                      To="360" Duration="0:0:1.5" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="Opacity"  
+                      To="0" Duration="0:0:3">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                      To="0" Duration="0:0:1.5" AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                      Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                      To="0" Duration="0:0:1.5" AccelerationRatio="1">
+            </DoubleAnimation>
+        </Storyboard>
+        <!--转出来-->
+        <Storyboard x:Key="showDW1">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="Opacity"  
+                        From="0" To="1" Duration="0:0:0.2">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[1].Angle"  
+                        From="180" To="0" Duration="0:0:0.2" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        From="0.2" To="1" Duration="0:0:0.2"   
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="0.2" To="1" Duration="0:0:0.2"   
+                        AccelerationRatio="1">
+            </DoubleAnimation>
+        </Storyboard>
+        <!--弹出来-->
+        <Storyboard x:Key="showDW2">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        From="0.2" To="0.5" Duration="0:0:0.04" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="0.2" To="0.5" Duration="0:0:0.04" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                          From="0.5" To="1" Duration="0:0:0.04" BeginTime="0:0:0.04" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                         From="0.5" To="1" Duration="0:0:0.04" BeginTime="0:0:0.04">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                         From="1" To="1.2" Duration="0:0:0.04" BeginTime="0:0:0.08" AutoReverse="True" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="1"  To="1.2" Duration="0:0:0.04" BeginTime="0:0:0.08" AutoReverse="True">
+            </DoubleAnimation>
+        </Storyboard>
+        <!--转回去-->
+        <Storyboard x:Key="closeDW1">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="RenderTransform.Children[1].Angle"  
+                      To="180" Duration="0:0:0.2" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="Opacity"  
+                      To="0" Duration="0:0:0.2">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"   
+                      Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                      To="0.2" Duration="0:0:0.2" AccelerationRatio="1">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                      Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                      To="0.2" Duration="0:0:0.2" AccelerationRatio="1">
+            </DoubleAnimation>
+        </Storyboard>
+
+        <!--弹回去-->
+        <Storyboard x:Key="closeDW2">
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                        From="1" To="1.2" Duration="0:0:0.04"  AutoReverse="True">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="1" To="1.2" Duration="0:0:0.04"  AutoReverse="True">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                          From="1" To="0.5" Duration="0:0:0.04" BeginTime="0:0:0.04" >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                         From="1" To="0.5" Duration="0:0:0.04" BeginTime="0:0:0.04">
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleX"  
+                         From="0.5" To="0.2" Duration="0:0:0.04" BeginTime="0:0:0.08"  >
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetName="Canvas1"  
+                        Storyboard.TargetProperty="RenderTransform.Children[0].ScaleY"  
+                        From="0.5"  To="0.2" Duration="0:0:0.04" BeginTime="0:0:0.08" >
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <!--设置DW1的事件触发-->
+        <!--注意对窗体window的name取为DW1-->
+        <EventTrigger SourceName="DW1" RoutedEvent="Window.Loaded">
+            <BeginStoryboard Name="showQueryCanvasStoryboard2"   
+                      Storyboard="{StaticResource showDW}">
+            </BeginStoryboard>
+        </EventTrigger>
+        <!--设置button1的事件触发-->
+        <!--注意对按钮的name取为button1-->
+        <EventTrigger SourceName="button1" RoutedEvent="Button.Click">
+            <BeginStoryboard Name="closeQueryCanvasStoryboard"   
+                      Storyboard="{StaticResource closeDW}">
+            </BeginStoryboard>
+        </EventTrigger>
+
+    </Window.Triggers>
+
+    <Canvas Background="Transparent" Height="257" Width="214">
+        <Canvas Background="Brown" Height="236" Width="201" Canvas.Left="9" Canvas.Top="14" Name="Canvas1">
+            <!--设置动画-->
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterX="100" CenterY="50"></ScaleTransform>
+                    <!--缩放中心为100,50。RenderTransform.Children[0]-->
+                    <RotateTransform CenterX="100" CenterY="50"></RotateTransform>
+                    <!--旋转中心为100,50。RenderTransform.Children[1]-->
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Button Margin="98,107,124,127" Name="button1"  FocusVisualStyle="{DynamicResource MyFocusVisual}"  
+                Click="button1_Click"  Height="28" Width="112" Canvas.Left="-53" Canvas.Top="77">关闭</Button>
+            <CheckBox Height="31" HorizontalAlignment="Left" Margin="32,25,0,0" Name="checkBox1" VerticalAlignment="Top" Width="75" Canvas.Left="11" Canvas.Top="-1">CheckBox</CheckBox>
+            <TextBlock Height="35" Margin="124,21,34,0" Name="textBlock1" VerticalAlignment="Top" Background="BlueViolet" Text="dfdf" Width="60" Canvas.Left="-73" Canvas.Top="43" />
+        </Canvas>
+    </Canvas>
+</Window>

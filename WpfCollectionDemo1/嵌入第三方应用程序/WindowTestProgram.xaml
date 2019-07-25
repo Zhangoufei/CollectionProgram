@@ -1,0 +1,17 @@
+﻿<Window x:Class="嵌入第三方应用程序.WindowTestProgram"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:嵌入第三方应用程序"
+        mc:Ignorable="d" 
+        Title="WindowTestProgram" Height="450" Width="800"  >
+    <Grid>
+        <UniformGrid>
+            <Button Content="nodpad++"  Click="Button_Click" />
+            <Button Content="nodpad++"  />
+            <Button Content="nodpad++"  />
+            <Button Content="nodpad++"  />
+        </UniformGrid>
+    </Grid>
+</Window>

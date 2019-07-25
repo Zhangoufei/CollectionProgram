@@ -1,0 +1,19 @@
+﻿<Application x:Class="MyStyle.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FlipClock.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Util.Control.Common;component/Style/Themes/FIcon.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Util.Control.Common;component/Control/FButton.xaml" />
+                <ResourceDictionary Source="StyleDictinary/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="StyleDictinary/ScrollViewerStyles.xaml"/>
+                <ResourceDictionary Source="StyleDictinary/ListBoxStylesDe.xaml"/>
+
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

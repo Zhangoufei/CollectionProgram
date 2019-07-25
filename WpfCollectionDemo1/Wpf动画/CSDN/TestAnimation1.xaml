@@ -1,0 +1,53 @@
+﻿<Window x:Class="Wpf动画.CSDN.TestAnimation1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf动画.CSDN"
+        mc:Ignorable="d"
+        Title="TestAnimation1" Height="450" Width="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" >
+            <Button Content="使用计时器动画" x:Name="button1" ></Button>
+            <Button Content="变为原来的大小" Click="Button_Click_1" ></Button>
+            <Button Content="将大小变为0" Click="Button_Click" ></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" >
+            <Button Content="使用wpf自带动画" x:Name="button2" ></Button>
+            <Button Content="素逐渐进入视野" Click="Button_Click_1" ></Button>
+            <Button Content="将大小变为0" Click="Button_Click" ></Button>
+        </StackPanel>
+
+        <StackPanel Margin="10" Grid.Row="1" Grid.Column="0">
+            <Rectangle
+        Name="MyRectangle"
+        Width="100" 
+        Height="100"
+        Fill="Blue">
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard >
+                                <DoubleAnimation Storyboard.TargetName="MyRectangle" Storyboard.TargetProperty="Opacity" 
+                                     From="1.0" To="0.0" Duration="0:0:5" 
+                                     AutoReverse="True" RepeatBehavior="Forever"
+                                     />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+         
+        </StackPanel>
+    </Grid>
+</Window>

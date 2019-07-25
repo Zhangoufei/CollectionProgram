@@ -1,0 +1,19 @@
+﻿<Window x:Class="多线程类型.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:多线程类型"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <UniformGrid>
+            <Button Content="Thread"  Click="Button_Click" />
+            <Button Content="Await获取json" Click="Button_Click_4" />
+            <Button Content="Await下载资源" Click="Button_Click_3" />
+            <Button Content="awit添加参数" Click="Button_Click_2" />
+            <Button Content="Await" Click="Button_Click_1" />
+            <Button Content="Asynce" Click="Button_Click_5" />
+        </UniformGrid>
+    </Grid>
+</Window>

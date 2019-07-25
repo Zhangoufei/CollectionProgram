@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfCollectionDemo1.mvvm的使用.UserControl.图片切换"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCollectionDemo1.mvvm的使用.UserControl"
+        mc:Ignorable="d"
+        Title="图片切换" Height="450" Width="800">
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Grid  Grid.Row="0" Grid.Column="0" x:Name="gridImage"  >
+           
+        </Grid>
+        <Grid Grid.Row="1" x:Name="grid3" >
+            <Button Content="点击切换图片" Click="Button_Click" />
+        </Grid>
+        <Grid Grid.Row="2" x:Name="grid4" >
+            <Button Content="点击切换图片2" Click="Button_Click_1" />
+        </Grid>
+        <Grid  Grid.Row="0" Grid.Column="0" x:Name="gridImage2"  >
+            <Image x:Name="image" Source="/resource/bc_27.png" ></Image>
+            <Image x:Name="image2" Source="/resource/38c58PICtuS.jpg"  ></Image>
+        </Grid>
+    </Grid>
+
+
+
+</Window>

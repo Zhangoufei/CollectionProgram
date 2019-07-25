@@ -1,0 +1,93 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlendBookDemo"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="BlendBookDemo.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="980" Width="963.333" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid SnapsToDevicePixels="True">
+        <Button Content="Button" HorizontalAlignment="Left" Height="90" Margin="60,25,0,0" VerticalAlignment="Top" Width="225"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="135" Margin="75,25,0,0" Stroke="Black" VerticalAlignment="Top" Width="235"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="120" Margin="105,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="285"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="45" Margin="100,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="140"/>
+        <Ellipse HorizontalAlignment="Left" Height="155" Margin="105,220,0,0" Stroke="Black" VerticalAlignment="Top" Width="360">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="35" Margin="200,250,0,0" TextWrapping="Wrap" Text="第一个wpf应用程序" VerticalAlignment="Top" Width="185" FontSize="18"/>
+        <Button x:Name="button1" Content="退出" HorizontalAlignment="Left" Height="35" Margin="205,310,0,0" VerticalAlignment="Top" Width="150" FontSize="18" FontFamily="Microsoft JhengHei UI" Cursor="Hand" Click="button1_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="235" Margin="515,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="330" RenderTransformOrigin="0.424,0.511">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FE2B0A0A"/>
+                    <GradientStop Color="#FEFFFFFF" Offset="1"/>
+                    <GradientStop Color="#FFCD3535" Offset="1"/>
+                    <GradientStop Color="#FE080808"/>
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="0.964"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="0.964"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="0.747"/>
+                    <GradientStop Color="#FE171717" Offset="0.194"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="170" Margin="525,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="315">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.084,0.841" MappingMode="RelativeToBoundingBox" StartPoint="0.974,0.033">
+                    <GradientStop Color="#FE2B0A0A"/>
+                    <GradientStop Color="#FEFFFFFF" Offset="1"/>
+                    <GradientStop Color="#FFCD3535" Offset="1"/>
+                    <GradientStop Color="#FE080808"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="1"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="1"/>
+                    <GradientStop Color="#FE171717" Offset="0.409"/>
+                    <GradientStop Color="#FE161414" Offset="0.085"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Ellipse HorizontalAlignment="Left" Height="120" Margin="105,455,0,0" Stroke="Black" VerticalAlignment="Top" Width="120">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FE2B0A0A"/>
+                    <GradientStop Color="#FEFFFFFF" Offset="1"/>
+                    <GradientStop Color="#FFCD3535" Offset="1"/>
+                    <GradientStop Color="#FE080808"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="1"/>
+                    <GradientStop Color="#FEF5F5F5" Offset="1"/>
+                    <GradientStop Color="#FE171717" Offset="0.409"/>
+                    <GradientStop Color="#FE161414" Offset="0.085"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Rectangle HorizontalAlignment="Left" Height="110" Margin="285,465,0,0" Stroke="Black" VerticalAlignment="Top" Width="155"/>
+        <TextBox HorizontalAlignment="Left" Height="90" Margin="315,475,0,0" TextWrapping="Wrap" Text="画" VerticalAlignment="Top" Width="80" FontSize="80" FontFamily="Arvo" FontWeight="Bold" >
+            <TextBox.BorderBrush>
+                <ImageBrush/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="90" Margin="520,480,0,0" TextWrapping="Wrap" Text="笔" VerticalAlignment="Top" Width="80" FontSize="80" FontFamily="Arvo" FontWeight="Bold" >
+            <TextBox.BorderBrush>
+                <ImageBrush/>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+
+
+        <ed:Callout AnchorPoint="0,1.25" CalloutStyle="Oval" Content="Callout" FontSize="14.667" HorizontalAlignment="Left" Height="100" Margin="585,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="200"/>
+        <ed:Callout AnchorPoint="0,1.5" CalloutStyle="RoundedRectangle" Content="Callout" FontSize="14.667" HorizontalAlignment="Left" Height="65" Margin="155,355,0,0" Stroke="Black" VerticalAlignment="Top" Width="315"/>
+        <Path Data="M709.5,509.5 L739.5,514.5 739.5,524.5 749.5,539.5 744.5,564.5 739.5,569.5 729.5,574.5 C729.5,574.5 719.5,539.5 724.5,579.5 729.5,619.5 694.5,589.5 694.5,589.5 L669.5,584.49999 C669.5,584.49999 674.5,614.49999 664.5,579.49999 654.5,544.5 624.5,564.49999 624.5,564.49999 624.5,564.49999 621.71622,547.79729 621.71622,547.79729 624.5,564.49999 619.5,534.5 619.5,534.5 639.5,529.5 644.5,524.5 644.5,524.5 L665.53371,519.64607 z" HorizontalAlignment="Left" Height="91.8" Margin="644,473.2,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="131"/>
+        <Path Data="M775,580 L809.5,499.5 889.5,514.5 924.5,564.5 914.5,619.5 819.5,634.5 779.5,619.5 z" HorizontalAlignment="Left" Height="136" Margin="789.5,455,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="150.5"/>
+        <Path Data="M810,555" HorizontalAlignment="Left" Height="1" Margin="810,555,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+        <Path Data="M472,562 C479.55781,551.21901 487.33439,521.46815 508.66667,551.33333 521.97767,569.96874 526.44983,566.54208 516,592.66667 504.77102,620.73911 494.12678,605.0114 462.66667,614 458.00823,615.33098 453.16374,614.60235 450.66667,620.66667 449.6198,623.20907 448.92322,633.65402 451.33333,636.66667 459.45825,646.82282 474.79557,641.33333 489.33333,641.33333 500.55343,641.33333 512.69876,630.06419 518.66667,642 523.90942,652.4855 521.32632,659.33333&#xD;&#xA;496.66667,659.33333 484.22222,659.33333 471.77778,659.33333 459.33333,659.33333 446.62664,659.33333 442.1344,655.97418 431.33333,647.33333 420.58568,638.73521 420,638.02318 420,622 420,600.88928 430.84865,604.86054 454.66667,595.33333 467.29029,590.28388 468,596.27164 468,578 468,566.06238 469.3157,566.90357 475.33333,556.66667" HorizontalAlignment="Left" Height="121.933" Margin="420,538.4,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="102.782"/>
+        <Path Data="M476.66667,438 C470.29229,438 462.24765,436.26454 456,438 448.71207,440.02442 446.7354,440.18553 445.33333,450 444.60137,455.12371 442.90997,462.72992 444.66667,468 446.71113,474.13339 448.42608,479.70642 455.33333,482.66667 483.65423,494.8042 507.92264,499.33507 540.66667,482 551.02403,476.51669 572.95521,441.8859 524.66667,438.66667 507.01834,437.49011 488.64448,438.94367 471.33333,437.33333" HorizontalAlignment="Left" Height="57.204" Margin="443.895,437.229,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="111.819"/>
+
+
+
+    </Grid>
+</Window>

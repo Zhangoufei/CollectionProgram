@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfCollectionDemo1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Material Design in XAML" Height="800" Width="1100"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        >
+    <Grid>
+        <UniformGrid>
+            <Button Click="Button_Click" >绑定学习</Button>
+            <Button Content="点击打开图片切换" Click="Button_Click_1" />
+            <Button Content="使用popup" Click="Button_Click_2" />
+            <Button Content="使checkbox" Click="Button_Click_3" />
+            <Button Content="使baseLayout" Click="Button_Click_4" />
+            <Button Content="ListBox滚动条样式"  Click="Button_Click_5" />
+            <Button Content="ListBox滚动条样式2"  Click="Button_Click_10" />
+            <Button Content="图片放大缩小"  Click="Button_Click_6" />
+            <Button Content="手势操作"  Click="Button_Click_7" />
+            <Button Content="ItemControl"  Click="Button_Click_8" />
+            <Button Content="安装字体"  Click="Button_Click_9" />
+            <Button Content="tableControl"  Click="Button_Click_11" />
+            <Button Content="tableControl2"  Click="Button_Click_12" />
+            <Button x:Name="tableActivity" Content="焦点事件,焦点用法"  Click="Button_Click_13" />
+            <Button Content="动画"  Click="Button_Click_14" />
+            <Button Content="InkCanvas" Click="Button_Click_15" />
+        </UniformGrid>
+
+    </Grid>
+</Window>

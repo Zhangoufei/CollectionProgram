@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfCollectionDemo1.mvvm的使用.UserControl.滚动条样式2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCollectionDemo1.mvvm的使用.UserControl"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="滚动条样式2">
+
+    <Grid>
+        <ListBox x:Name="listBox"  >
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Background="{Binding Path=Background,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}}}"   >
+                        <StackPanel >
+                            <Grid Width="100" Height="100">
+                                <!--<Image x:Name="CacheStatus" Margin="5" Width="20" Height="20" Source="{StaticResource IMAGE_Cache_status_unDownload}"  HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Visibility="{Binding IsFileCached,Converter={StaticResource visibleContverter}}"/>-->
+                            </Grid>
+                            <TextBlock Margin="3" Text="{Binding FileClassName}" TextWrapping="Wrap"  Style="{StaticResource TextBlockTeaching_file}" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style  >
+                    <Setter Property="Control.Padding" Value="0" />
+                    <Style.Triggers>
+                        <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                            <Setter Property="ListBoxItem.Background" Value="#4d5f6d" ></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </Grid>
+</Page>

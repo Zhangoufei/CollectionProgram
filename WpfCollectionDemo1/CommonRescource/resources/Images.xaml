@@ -1,0 +1,213 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IntelligentClass">
+
+    <!--<Image x:Key="IMAGE_BackGround" Source="resouces/images/back_ground.jpg"/>-->
+
+    <ImageBrush x:Key="IMAGE_BackGround" ImageSource="images/back_ground.jpg"/>
+    <BitmapImage x:Key="IMAGE_NameLogo" UriSource="images/name_logo.png" />
+    <ImageBrush x:Key="IMAGE_Tab_Image" ImageSource="images/tab_bt_activited.png"/>
+    <BitmapImage x:Key="IMAGE_windows_close" UriSource="images/windows_close.png"/>
+
+
+    <!--mainwindow-->
+    <BitmapImage x:Key="IMAGE_Home_bt_setting"      UriSource="images/homePage/home_setting.png" />
+    <BitmapImage x:Key="IMAGE_Setting_search"       UriSource="images/homePage/setting_page_search.png" />
+    <BitmapImage x:Key="IMAGE_LOGO"       UriSource="images/TIYE_logo.png" />
+    <BitmapImage x:Key="IMAGE_back"       UriSource="images/tiye_back.png" />
+
+    <!--Home page-->
+    <ImageBrush x:Key="IMAGE_Home_background"       ImageSource="images/homePage/img_home_background.png"/>
+    <ImageBrush x:Key="IMAGE_Home_background_mask"  ImageSource="images/homePage/img_home_background_mask.png"/>
+    <ImageBrush x:Key="IMAGE_Home_optical_mask"     ImageSource="images/homePage/home_optical_bakground.png"/>
+
+    <ImageBrush x:Key="IMAGE_Home_bt_Blue"    ImageSource="images/homePage/home_background_blue.png"/>
+    <ImageBrush x:Key="IMAGE_Home_bt_Orange"  ImageSource="images/homePage/home_background_orange.png"/>
+    <ImageBrush x:Key="IMAGE_Home_bt_Yellow"  ImageSource="images/homePage/home_background_yellow.png"/>
+    <ImageBrush x:Key="IMAGE_Home_Honour_Background"   ImageSource="images/homePage/home_bt_honour_background.png"/>
+    <ImageBrush x:Key="IMAGE_Home_Duty_Background"     ImageSource="images/homePage/home_duty_background.png"/>
+    <BitmapImage x:Key="IMAGE_Home_bt_assist"       UriSource="images/homePage/home_bt_assist_image.png" />
+    <BitmapImage x:Key="IMAGE_Home_bt_video"        UriSource="images/homePage/home_bt_videoRoom.png" />
+    <BitmapImage x:Key="IMAGE_Home_bt_liveVideo"    UriSource="images/homePage/home_bt_liveVideo.png" />
+    <BitmapImage x:Key="IMAGE_Home_bt_Teaching"     UriSource="images/homePage/home_bt_teaching_image.png" />
+    <BitmapImage x:Key="IMAGE_Home_home_page_close"     UriSource="images/homePage/home_page_close.png" />
+
+    <BitmapImage x:Key="IMAGE_Home_bt_hide"                 UriSource="images/homePage/home_bt_hide.png" />
+    <BitmapImage x:Key="IMAGE_Home_duty_image"              UriSource="images/homePage/home_duty_image.png" />
+    <ImageBrush x:Key="IMAGE_Home_duty_title_background"    ImageSource="images/homePage/home_duty_title.png" />
+    <ImageBrush x:Key="IMAGE_Home_notify_background"        ImageSource="images/homePage/home_notify_background.png" />
+    <BitmapImage x:Key="IMAGE_Home_notify_close"            UriSource="images/homePage/home_notify_close.png" />
+    <ImageBrush x:Key="IMAGE_Home_schedule_heighlight"        ImageSource="images/homePage/home_schedule_hightlight.png" />
+    <ImageBrush x:Key="IMAGE_Home_schedule_heighlight_2"        ImageSource="images/homePage/img_home_kebbg.png" />
+
+    <!--Teaching page-->
+    <ImageBrush x:Key="IMAGE_bt_left"  ImageSource="images/left.png"/>
+    <ImageBrush x:Key="IMAGE_bt_right"  ImageSource="images/right.png"/>
+    <BitmapImage x:Key="IMAGE_teaching_chinese"  UriSource="images/class_type_chinese.jpg"/>
+
+    <!--File icon-->
+    <BitmapImage x:Key="IMAGE_FileType_word"  UriSource="images/file_type_word.png" />
+    <BitmapImage x:Key="IMAGE_FileType_excel" UriSource="images/file_type_excel.png" />
+    <BitmapImage x:Key="IMAGE_FileType_ppt"   UriSource="images/file_type_ppt.png" />
+    <BitmapImage x:Key="IMAGE_FileType_video" UriSource="images/file_type_video.png" />
+    <BitmapImage x:Key="IMAGE_FileType_music" UriSource="images/file_type_music.png" />
+    <BitmapImage x:Key="IMAGE_FileType_txt"   UriSource="images/file_type_txt.png" />
+    <BitmapImage x:Key="IMAGE_FileType_pdf"   UriSource="images/file_type_pdf.png" />
+    <BitmapImage x:Key="IMAGE_FileType_image" UriSource="images/file_type_image.png" />
+
+    <BitmapImage x:Key="IMAGE_FileType_other" UriSource="images/file_type_unknown.png" />
+
+    <!--Canvas icon-->
+    <ImageBrush x:Key="IMAGE_Canvas_background"     ImageSource="images/canvas/canvas_background.jpg"/>
+    <BitmapImage x:Key="IMAGE_Canvas_Bt_Backup"     UriSource="images/canvas/canvas_bt_backup.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_pen"           UriSource="images/canvas/canvas_pen.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_pen_active"    UriSource="images/canvas/canvas_pen_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_eraser"        UriSource="images/canvas/canvas_eraser.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_eraser_active" UriSource="images/canvas/canvas_eraser_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_select"        UriSource="images/canvas/canvas_select.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_select_active" UriSource="images/canvas/canvas_select_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_level"         UriSource="images/canvas/canvas_level.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_revert"        UriSource="images/canvas/canvas_revert.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_clean"         UriSource="images/canvas/canvas_clean.png" />
+
+    <BitmapImage x:Key="IMAGE_Canvas_line1"         UriSource="images/canvas/canvas_line_1.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line2"         UriSource="images/canvas/canvas_line_2.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line3"         UriSource="images/canvas/canvas_line_3.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line4"         UriSource="images/canvas/canvas_line_4.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line5"         UriSource="images/canvas/canvas_line_5.png" />
+
+    <BitmapImage x:Key="IMAGE_Canvas_line1_active"         UriSource="images/canvas/canvas_line_1_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line2_active"         UriSource="images/canvas/canvas_line_2_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line3_active"         UriSource="images/canvas/canvas_line_3_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line4_active"         UriSource="images/canvas/canvas_line_4_active.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_line5_active"         UriSource="images/canvas/canvas_line_5_active.png" />
+
+    <BitmapImage x:Key="IMAGE_Canvas_color_black_c"         UriSource="images/canvas/canvas_color_black_c.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_blue_c"          UriSource="images/canvas/canvas_color_blue_c.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_green_c"         UriSource="images/canvas/canvas_color_green_c.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_red_c"           UriSource="images/canvas/canvas_color_red_c.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_white_c"         UriSource="images/canvas/canvas_color_white_c.png" />
+
+    <BitmapImage x:Key="IMAGE_Canvas_color_black_r"         UriSource="images/canvas/canvas_color_black_r.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_blue_r"          UriSource="images/canvas/canvas_color_blue_r.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_green_r"         UriSource="images/canvas/canvas_color_green_r.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_red_r"           UriSource="images/canvas/canvas_color_red_r.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_color_white_r"         UriSource="images/canvas/canvas_color_white_r.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_Files"                 UriSource="images/canvas/canvas_files.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_arrow_left"            UriSource="images/canvas/canvas_arrow_left.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_arrow_right"           UriSource="images/canvas/canvas_arrow_right.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_page_up"               UriSource="images/canvas/canvas_page_up.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_page_down"             UriSource="images/canvas/canvas_page_down.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_splite_line"           UriSource="images/canvas/canvas_splite_line.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_stackpanel_up"         UriSource="images/canvas/canvas_stackpanel_up.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_bottom_fileImage"      UriSource="images/canvas/canvas_stackpanelbottom_fileImage.png" />
+    <BitmapImage x:Key="IMAGE_canvas_stop"                  UriSource="images/canvas/canvas_stop.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_hide"                  UriSource="images/canvas/canvas_hide.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_add_page"              UriSource="images/canvas/canvas_add_page.png" />
+    <BitmapImage x:Key="IMAGE_Canvas_close"                 UriSource="images/canvas/canvas_close.png" />
+
+
+
+    <ImageBrush x:Key="IMAGE_Canvas_close_brush"                 ImageSource="images/canvas/canvas_close.png" />
+    <ImageBrush x:Key="IMAGE_canvas_subject_1"              ImageSource="images/canvas/canvas_subject_1.png" />
+    <ImageBrush x:Key="IMAGE_canvas_subject_2"              ImageSource="images/canvas/canvas_subject_2.png" />
+    <ImageBrush x:Key="IMAGE_convas_subject_grid"              ImageSource="images/canvas/convas_subject_grid.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_image_bottom"           ImageSource="images/canvas/canvas_image_bottom.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_circle_blue"            ImageSource="images/canvas/canvas_circle_blue.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_circle_white"           ImageSource="images/canvas/canvas_circle_white.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_stackpanel_bottom"      ImageSource="images/canvas/canvas_stackpanelbottom.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_stackbottom_filesouce"      ImageSource="images/canvas/canvas_stackbottom_filesouce.png" />
+    <ImageBrush x:Key="IMAGE_Canvas_tree_backgraund"      ImageSource="images/canvas/canvas_tree_backgraund.png" />
+    <ImageBrush x:Key="IMAGE_Convas_tree_right_bg_list"      ImageSource="images/canvas/convas_tree_right_bg_list.png" />
+    <ImageBrush x:Key="IMAGE_Convas_tree_right_selected"      ImageSource="images/canvas/convas_tree_right_selected.png" />
+    <ImageBrush x:Key="IMAGE_Convas_class_schedule_bg"      ImageSource="images/canvas/canvas_class_schedule_bg.png" />
+    <ImageBrush x:Key="IMAGE_Convas_weed_nowday"      ImageSource="images/canvas/canvas_weed_nowday.png" />
+    <ImageBrush x:Key="IMAGE_Convas_weed_nowday_2"      ImageSource="images/canvas/convas_weed_nowday_2.png" />
+
+    <!--Video player-->
+    <BitmapImage x:Key="IMAGE_VideoPlayer_pause"        UriSource="images/videoPlayer/videoPlayer_pause.png" />
+    <BitmapImage x:Key="IMAGE_VideoPlayer_play"         UriSource="images/videoPlayer/videoPlayer_play.png" />
+    <BitmapImage x:Key="IMAGE_VideoPlayer_playpoint"    UriSource="images/videoPlayer/videoPlayer_playpoint.png" />
+    <BitmapImage x:Key="IMAGE_VideoPlayer_voice"        UriSource="images/videoPlayer/videoPlayer_voice.png" />
+    <BitmapImage x:Key="IMAGE_VideoPlayer_voicepoint"   UriSource="images/videoPlayer/videoPlayer_voicepoint.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_defaultCover"   UriSource="images/video_default_cover.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_big"   UriSource="images/videoPlayer/videoPlayer_big.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_small"   UriSource="images/videoPlayer/videoPlayer_small.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_stop"   UriSource="images/videoPlayer/videoPlayer_stop.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_top_panel"   UriSource="images/videoPlayer/videoPlayer_top_panel.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_botton_panel"   UriSource="images/videoPlayer/videoPlayer_botton_panel.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_play_left"   UriSource="images/videoPlayer/videoPlayer_play_left.png" />
+    <BitmapImage x:Key="IMAGE_VideoPage_titleimage"   UriSource="images/videoPlayer/videoPlayer_titleimage.jpg" />
+    <BitmapImage x:Key="IMAGE_VideoPage_musicclose"   UriSource="images/videoPlayer/videoPlayer_musicclose.png" />
+
+
+    <!--class showcase-->
+    <ImageBrush x:Key="IMAGE_ShowCase_album_background"     ImageSource="images/showcase/showcase_class_album_background.png"/>
+    <ImageBrush x:Key="IMAGE_ShowCase_copy_background"      ImageSource="images/showcase/showcase_class_copy_background.png"/>
+    <ImageBrush x:Key="IMAGE_ShowCase_honor_background"     ImageSource="images/showcase/showcase_class_honor_background.png"/>
+    <BitmapImage x:Key="IMAGE_ShowCase_album_cover"     UriSource="images/showcase/showcase_class_album_cover.png"/>
+    <BitmapImage x:Key="IMAGE_ShowCase_copy_cover"      UriSource="images/showcase/showcase_class_copy_cover.png"/>
+
+    <BitmapImage x:Key="IMAGE_ShowCase_honorIcon"   UriSource="images/showcase/showcase_honor_icon.png" />
+    <BitmapImage x:Key="IMAGE_ShowCase_classIcon"   UriSource="images/showcase/showcase_class_icon.png" />
+    <BitmapImage x:Key="IMAGE_ShowCase_copyNews"    UriSource="images/showcase/showcase_class_copyNews.png" />
+
+    <!--Live room-->
+    <BitmapImage x:Key="IMAGE_LiveRoom_class"   UriSource="images/liveroom/liveroom_class.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_meeting" UriSource="images/liveroom/liveroom_meeting.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school"  UriSource="images/liveroom/liveroom_school.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_special_class"  UriSource="images/liveroom/liveroom_special_class.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_primary_school"  UriSource="images/liveroom/liveroom_primary_school.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_middle_school"  UriSource="images/liveroom/liveroom_middle_school.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_waiting"  UriSource="images/liveroom/liveroom_waiting.gif" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_waiting2"  UriSource="images/liveroom/waiting2.gif" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_waiting3"  UriSource="images/liveroom/liveroom_waiting3.gif" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_infoPanel"  UriSource="images/liveroom/liveroom_infoPanel.png" />
+
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover1"  UriSource="images/liveroom/liveroom_school_cover1.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover2"  UriSource="images/liveroom/liveroom_school_cover2.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover3"  UriSource="images/liveroom/liveroom_school_cover3.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover4"  UriSource="images/liveroom/liveroom_school_cover4.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover5"  UriSource="images/liveroom/liveroom_school_cover5.png" />
+    <BitmapImage x:Key="IMAGE_LiveRoom_school_cover6"  UriSource="images/liveroom/liveroom_school_cover6.png" />
+
+
+    <!--Message Box-->
+    <BitmapImage x:Key="IMAGE_MessageBox_warninng"                  UriSource="images/messageBox/messaeBox_warning.png" />
+    <ImageBrush x:Key="IMAGE_MessageBox_button_background_gray"    ImageSource="images/messageBox/messaeBox_button_background_gray.png" />
+    <ImageBrush x:Key="IMAGE_MessageBox_button_background_red"     ImageSource="images/messageBox/messaeBox_button_background_red.png" />
+    <ImageBrush x:Key="IMAGE_MessageBox_title_background"          ImageSource="images/messageBox/messaeBox_title_background.png" />
+
+    <!--test images-->
+    <ImageBrush x:Key="IMAGE_Video_Cover"   ImageSource="images/test/VideoCover.jpg"/>
+    <BitmapImage x:Key="IMAGE_home_girl"    UriSource="images/test/girl.jpg" />
+    <BitmapImage x:Key="IMAGE_home_boy"     UriSource="images/test/boy.jpg" />
+
+
+    <!---loading加载-->
+    <BitmapImage x:Key="IMAGE_home_2"                    UriSource="loading/2.png" />
+    <BitmapImage x:Key="IMAGE_home_3"                    UriSource="loading/3.png" />
+    <BitmapImage x:Key="IMAGE_home_f"                    UriSource="loading/f.gif" />
+    <BitmapImage x:Key="IMAGE_home_file_type_word"       UriSource="loading/file_type_word.png" />
+    <BitmapImage x:Key="IMAGE_home_rolling"              UriSource="loading/rolling.gif" />
+    <BitmapImage x:Key="IMAGE_home_W"                    UriSource="loading/W.png" />
+
+
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00001"                    UriSource="images/clock/clock00001.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00002"                    UriSource="images/clock/clock00002.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00003"                    UriSource="images/clock/clock00003.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00004"                    UriSource="images/clock/clock00004.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00005"                    UriSource="images/clock/clock00005.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00006"                    UriSource="images/clock/clock00006.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00007"                    UriSource="images/clock/clock00007.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00008"                    UriSource="images/clock/clock00008.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00009"                    UriSource="images/clock/clock00009.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00010"                    UriSource="images/clock/clock00010.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00011"                    UriSource="images/clock/clock00011.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00012"                    UriSource="images/clock/clock00012.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00013"                    UriSource="images/clock/clock00013.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00014"                    UriSource="images/clock/clock00014.png" />
+    <BitmapImage x:Key="IMAGE_ClassInteraction_Time_clock00015"                    UriSource="images/clock/clock00015.png" />
+
+
+</ResourceDictionary>

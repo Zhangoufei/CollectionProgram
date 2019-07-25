@@ -1,0 +1,19 @@
+﻿<!--
+   *********  请勿修改此文件   *********
+   此文件由设计工具再生成。更改
+   此文件可能会导致错误。
+-->
+<SampleDataSource:SampleDataSource xmlns:SampleDataSource="clr-namespace:Expression.Blend.SampleData.SampleDataSource">
+	<SampleDataSource:SampleDataSource.Collection>
+		<SampleDataSource:Item Property1="Aenean aliquam cras" Property2="True" Property3="Cras duis class curae"/>
+		<SampleDataSource:Item Property1="Nam class mauris" Property2="False" Property3="Nunc amet donec"/>
+		<SampleDataSource:Item Property1="Nullam duis nunc" Property2="True" Property3="Maecenas ante arcu"/>
+		<SampleDataSource:Item Property1="Sed curae" Property2="False" Property3="Praesent nam diam"/>
+		<SampleDataSource:Item Property1="Aptent integer quisque" Property2="True" Property3="Eget aliquam elit integer"/>
+		<SampleDataSource:Item Property1="Amet ante" Property2="False" Property3="Etiam accumsan fusce"/>
+		<SampleDataSource:Item Property1="Arcu maecenas donec auctor" Property2="True" Property3="Aenean sed"/>
+		<SampleDataSource:Item Property1="Vivamus aliquam" Property2="False" Property3="Enim lorem dis est"/>
+		<SampleDataSource:Item Property1="Diam aliquet dis etiam" Property2="True" Property3="Bibendum mauris"/>
+		<SampleDataSource:Item Property1="Blandit fusce praesent" Property2="False" Property3="Nullam hac"/>
+	</SampleDataSource:SampleDataSource.Collection>
+</SampleDataSource:SampleDataSource>

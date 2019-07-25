@@ -1,0 +1,63 @@
+﻿<Page x:Class="MyStyle.pages.ScrollViewerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyStyle.pages"
+      xmlns:local1="clr-namespace:MyStyle.Styles"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ScrollViewerPage">
+    <Grid >
+        <UniformGrid>
+            <ScrollViewer Template="{DynamicResource ScrollViewerControlTemplate1}"  >
+                <StackPanel>
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="系统默认的滚动条"  >
+                    </TextBlock>
+                    <TextBlock x:Name="textData" TextWrapping="WrapWithOverflow" Text="系统默"  >
+                    </TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+
+
+            <ItemsControl ItemsSource="{Binding}" x:Name="itemsControl" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Black" Margin="8" Width="150" Height="50">
+                            <Grid>
+                                <Rectangle Fill="{Binding}"  />
+                                <TextBlock Text="{Binding Name}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <local1:MyWrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Template>
+                    <ControlTemplate>
+                        <ScrollViewer CanContentScroll="True">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+            </ItemsControl>
+
+            <ScrollViewer CanContentScroll="True" >
+                <local1:MyWrapPanel >
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="系统默认的滚动条"  >
+                    </TextBlock>
+                    <TextBlock x:Name="textData2" TextWrapping="WrapWithOverflow" Text="系统默"  >
+                    </TextBlock>
+                </local1:MyWrapPanel>
+
+            </ScrollViewer>
+            
+
+
+        </UniformGrid>
+
+    </Grid>
+</Page>

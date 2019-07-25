@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD29EE0E-6BE9-4A57-839F-1DA5F2ADC4BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonRescource</RootNamespace>
+    <AssemblyName>CommonRescource</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="resources\Images.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\Strings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\app.ico" />
+    <Resource Include="resources\images\back_ground.jpg" />
+    <Resource Include="resources\images\canvas\canvas_add_page.png" />
+    <Resource Include="resources\images\canvas\canvas_arrow_left.png" />
+    <Resource Include="resources\images\canvas\canvas_arrow_right.png" />
+    <Resource Include="resources\images\canvas\canvas_background.jpg" />
+    <Resource Include="resources\images\canvas\canvas_bt_backup.png" />
+    <Resource Include="resources\images\canvas\canvas_circle_blue.png" />
+    <Resource Include="resources\images\canvas\canvas_circle_white.png" />
+    <Resource Include="resources\images\canvas\canvas_class_schedule_bg.png" />
+    <Resource Include="resources\images\canvas\canvas_clean.png" />
+    <Resource Include="resources\images\canvas\canvas_close.png" />
+    <Resource Include="resources\images\canvas\canvas_color_black_c.png" />
+    <Resource Include="resources\images\canvas\canvas_color_black_r.png" />
+    <Resource Include="resources\images\canvas\canvas_color_blue_c.png" />
+    <Resource Include="resources\images\canvas\canvas_color_blue_r.png" />
+    <Resource Include="resources\images\canvas\canvas_color_green_c.png" />
+    <Resource Include="resources\images\canvas\canvas_color_green_r.png" />
+    <Resource Include="resources\images\canvas\canvas_color_red_c.png" />
+    <Resource Include="resources\images\canvas\canvas_color_red_r.png" />
+    <Resource Include="resources\images\canvas\canvas_color_white_c.png" />
+    <Resource Include="resources\images\canvas\canvas_color_white_r.png" />
+    <Resource Include="resources\images\canvas\canvas_color_yellow_c.png" />
+    <Resource Include="resources\images\canvas\canvas_eraser.png" />
+    <Resource Include="resources\images\canvas\canvas_eraser_active.png" />
+    <Resource Include="resources\images\canvas\canvas_files.png" />
+    <Resource Include="resources\images\canvas\canvas_hide.png" />
+    <Resource Include="resources\images\canvas\canvas_image_bottom.png" />
+    <Resource Include="resources\images\canvas\canvas_level.png" />
+    <Resource Include="resources\images\canvas\canvas_line_1.png" />
+    <Resource Include="resources\images\canvas\canvas_line_1_active.png" />
+    <Resource Include="resources\images\canvas\canvas_line_2.png" />
+    <Resource Include="resources\images\canvas\canvas_line_2_active.png" />
+    <Resource Include="resources\images\canvas\canvas_line_3.png" />
+    <Resource Include="resources\images\canvas\canvas_line_3_active.png" />
+    <Resource Include="resources\images\canvas\canvas_line_4.png" />
+    <Resource Include="resources\images\canvas\canvas_line_4_active.png" />
+    <Resource Include="resources\images\canvas\canvas_line_5.png" />
+    <Resource Include="resources\images\canvas\canvas_line_5_active.png" />
+    <Resource Include="resources\images\canvas\canvas_name_list.png" />
+    <Resource Include="resources\images\canvas\canvas_page_down.png" />
+    <Resource Include="resources\images\canvas\canvas_page_up.png" />
+    <Resource Include="resources\images\canvas\canvas_pen.png" />
+    <Resource Include="resources\images\canvas\canvas_pen_active.png" />
+    <Resource Include="resources\images\canvas\canvas_revert.png" />
+    <Resource Include="resources\images\canvas\canvas_select.png" />
+    <Resource Include="resources\images\canvas\canvas_select_active.png" />
+    <Resource Include="resources\images\canvas\canvas_splite_line.png" />
+    <Resource Include="resources\images\canvas\canvas_stackbottom_filesouce.png" />
+    <Resource Include="resources\images\canvas\canvas_stackpanelbottom.png" />
+    <Resource Include="resources\images\canvas\canvas_stackpanelbottom_fileImage.png" />
+    <Resource Include="resources\images\canvas\canvas_stackpanel_up.png" />
+    <Resource Include="resources\images\canvas\canvas_stop.png" />
+    <Resource Include="resources\images\canvas\canvas_subject_1.png" />
+    <Resource Include="resources\images\canvas\canvas_subject_2.png" />
+    <Resource Include="resources\images\canvas\canvas_tree_backgraund.png" />
+    <Resource Include="resources\images\canvas\canvas_tree_backgraund2.png" />
+    <Resource Include="resources\images\canvas\canvas_weed_nowday.png" />
+    <Resource Include="resources\images\canvas\convas_subject_grid.png" />
+    <Resource Include="resources\images\canvas\convas_tree_right_bg_list.png" />
+    <Resource Include="resources\images\canvas\convas_tree_right_selected.png" />
+    <Resource Include="resources\images\canvas\convas_weed_nowday_2.png" />
+    <Resource Include="resources\images\class_type_chinese.jpg" />
+    <Resource Include="resources\images\clock\clock00001.png" />
+    <Resource Include="resources\images\clock\clock00002.png" />
+    <Resource Include="resources\images\clock\clock00003.png" />
+    <Resource Include="resources\images\clock\clock00004.png" />
+    <Resource Include="resources\images\clock\clock00005.png" />
+    <Resource Include="resources\images\clock\clock00006.png" />
+    <Resource Include="resources\images\clock\clock00007.png" />
+    <Resource Include="resources\images\clock\clock00008.png" />
+    <Resource Include="resources\images\clock\clock00009.png" />
+    <Resource Include="resources\images\clock\clock00010.png" />
+    <Resource Include="resources\images\clock\clock00011.png" />
+    <Resource Include="resources\images\clock\clock00012.png" />
+    <Resource Include="resources\images\clock\clock00013.png" />
+    <Resource Include="resources\images\clock\clock00014.png" />
+    <Resource Include="resources\images\clock\clock00015.png" />
+    <Resource Include="resources\images\file_type_excel.png" />
+    <Resource Include="resources\images\file_type_image.png" />
+    <Resource Include="resources\images\file_type_music.png" />
+    <Resource Include="resources\images\file_type_pdf.png" />
+    <Resource Include="resources\images\file_type_ppt.png" />
+    <Resource Include="resources\images\file_type_txt.png" />
+    <Resource Include="resources\images\file_type_unknown.png" />
+    <Resource Include="resources\images\file_type_video.png" />
+    <Resource Include="resources\images\file_type_word.png" />
+    <Resource Include="resources\images\homePage\home_background_blue.png" />
+    <Resource Include="resources\images\homePage\home_background_orange.png" />
+    <Resource Include="resources\images\homePage\home_background_yellow.png" />
+    <Resource Include="resources\images\homePage\home_bt_assist_image.png" />
+    <Resource Include="resources\images\homePage\home_bt_class_honour.png" />
+    <Resource Include="resources\images\homePage\home_bt_hide.png" />
+    <Resource Include="resources\images\homePage\home_bt_honour_background.png" />
+    <Resource Include="resources\images\homePage\home_bt_liveVideo.png" />
+    <Resource Include="resources\images\homePage\home_bt_teaching_image.png" />
+    <Resource Include="resources\images\homePage\home_bt_videoRoom.png" />
+    <Resource Include="resources\images\homePage\home_duty_background.png" />
+    <Resource Include="resources\images\homePage\home_duty_image.png" />
+    <Resource Include="resources\images\homePage\home_duty_title.png" />
+    <Resource Include="resources\images\homePage\home_honor01.png" />
+    <Resource Include="resources\images\homePage\home_honor02.png" />
+    <Resource Include="resources\images\homePage\home_honor03.png" />
+    <Resource Include="resources\images\homePage\home_honor04.png" />
+    <Resource Include="resources\images\homePage\home_notify_background.png" />
+    <Resource Include="resources\images\homePage\home_notify_close.png" />
+    <Resource Include="resources\images\homePage\home_optical_bakground.png" />
+    <Resource Include="resources\images\homePage\home_page_close.png" />
+    <Resource Include="resources\images\homePage\home_schedule_hightlight.png" />
+    <Resource Include="resources\images\homePage\home_setting.png" />
+    <Resource Include="resources\images\homePage\img_home_background.png" />
+    <Resource Include="resources\images\homePage\img_home_background_mask.png" />
+    <Resource Include="resources\images\homePage\img_home_center.png" />
+    <Resource Include="resources\images\homePage\img_home_kebbg.png" />
+    <Resource Include="resources\images\homePage\setting_page_search.png" />
+    <Resource Include="resources\images\left.png" />
+    <Resource Include="resources\images\liveroom\liveroom_class.png" />
+    <Resource Include="resources\images\liveroom\liveroom_infoPanel.png" />
+    <Resource Include="resources\images\liveroom\liveroom_meeting.png" />
+    <Resource Include="resources\images\liveroom\liveroom_middle_school.png" />
+    <Resource Include="resources\images\liveroom\liveroom_primary_school.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover1.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover2.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover3.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover4.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover5.png" />
+    <Resource Include="resources\images\liveroom\liveroom_school_cover6.png" />
+    <Resource Include="resources\images\liveroom\liveroom_special_class.png" />
+    <Resource Include="resources\images\liveroom\liveroom_waiting.gif" />
+    <Resource Include="resources\images\liveroom\liveroom_waiting3.gif" />
+    <Resource Include="resources\images\liveroom\waiting2.gif" />
+    <Resource Include="resources\images\messageBox\messaeBox_button_background_gray.png" />
+    <Resource Include="resources\images\messageBox\messaeBox_button_background_red.png" />
+    <Resource Include="resources\images\messageBox\messaeBox_title_background.png" />
+    <Resource Include="resources\images\messageBox\messaeBox_warning.png" />
+    <Resource Include="resources\images\name_logo.png" />
+    <Resource Include="resources\images\right.png" />
+    <Resource Include="resources\images\showcase\showcase_class_album_background.png" />
+    <Resource Include="resources\images\showcase\showcase_class_album_cover.png" />
+    <Resource Include="resources\images\showcase\showcase_class_copyNews.png" />
+    <Resource Include="resources\images\showcase\showcase_class_copy_background.png" />
+    <Resource Include="resources\images\showcase\showcase_class_copy_cover.png" />
+    <Resource Include="resources\images\showcase\showcase_class_honor_background.png" />
+    <Resource Include="resources\images\showcase\showcase_class_icon.png" />
+    <Resource Include="resources\images\showcase\showcase_honor_icon.png" />
+    <Resource Include="resources\images\tab_bt_activited.png" />
+    <Resource Include="resources\images\test\boy.jpg" />
+    <Resource Include="resources\images\test\girl.jpg" />
+    <Resource Include="resources\images\test\VideoCover.jpg" />
+    <Resource Include="resources\images\tiye_back.png" />
+    <Resource Include="resources\images\tiye_back2 %282%29.png" />
+    <Resource Include="resources\images\tiye_back2.png" />
+    <Resource Include="resources\images\TIYE_logo.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_big.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_botton_panel.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_cover.jpg" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_musicclose.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_pause.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_play.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_playpoint.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_play_left.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_small.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_stop.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_titleimage.jpg" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_top_panel.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_voice.png" />
+    <Resource Include="resources\images\videoPlayer\videoPlayer_voicepoint.png" />
+    <Resource Include="resources\images\video_default_cover.png" />
+    <Resource Include="resources\images\windows_close.png" />
+    <Resource Include="resources\loading\2.png" />
+    <Resource Include="resources\loading\3.png" />
+    <Resource Include="resources\loading\f.gif" />
+    <Resource Include="resources\loading\file_type_word.png" />
+    <Resource Include="resources\loading\rolling.gif" />
+    <Resource Include="resources\loading\W.png" />
+    <Content Include="resources\videos\startup.mp4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

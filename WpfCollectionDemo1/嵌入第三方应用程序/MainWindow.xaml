@@ -1,0 +1,19 @@
+﻿<Window x:Class="嵌入第三方应用程序.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:嵌入第三方应用程序"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Border x:Name="border">
+        <UniformGrid>
+            <Button Content="打开第三方程序一" Click="Button_Click" />
+            <Button Content="打开第三方程序2" Click="Button_Click_1" />
+            <Button Content="打开第三方程序3"  Click="Button_Click_2" />
+            <Button Content="打开第三方程序4" />
+            <Button Content="打开第三方程序5" />
+            <Button Content="打开第三方程序6" />
+        </UniformGrid>
+    </Border>
+</Window>

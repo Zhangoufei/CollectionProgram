@@ -1,0 +1,37 @@
+﻿<Page x:Class="WpfCollectionDemo1.mvvm的使用.UserControl.ListBox横向滚动条"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCollectionDemo1.mvvm的使用.UserControl"
+      mc:Ignorable="d" 
+      d:DesignHeight="100" d:DesignWidth="800"
+      Title="ListBox横向滚动条">
+    <Grid>
+        <Grid.Resources>
+        </Grid.Resources>
+        <ListBox x:Name="listBoxTemp" ItemsSource="{Binding ListBoxs}"  ScrollViewer.ScrollChanged="ListBoxTemp_ScrollChanged"  >
+            <!--会自动换行-->
+            <!--<ListBox.Template>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" ScrollViewer.CanContentScroll="True"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ListBox.Template>-->
+            <!--不要自动换行-->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel >
+                        <TextBlock Text="{Binding TextBlock}"  />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>
