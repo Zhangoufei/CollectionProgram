@@ -86,17 +86,14 @@ namespace 多线程类型
             return sum;
         }
 
-        private async void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            string temp = await LoadFile();
-
-            MessageBox.Show(temp + "");
-
+            LoadFile();
         }
 
-        private async static Task<string> LoadFile()
+        private async static void LoadFile()
         {
-            string loadPath = "http://192.168.17.82/022bc8deeaa156f7fa837bc7d4066be4/timg%20%286%29.jpg";
+            string loadPath = "http://192.168.17.82/5fadd2cbd7339345c0f9f495ec11a51d/救世超能：永无止.mp4";
 
             string pathLoadl = @"D:\picture";
 
@@ -105,21 +102,23 @@ namespace 多线程类型
             {
                 try
                 {
-                    var temp = await Task.Run(() =>
-                        {
-                            client.DownloadFile(loadPath, pathLoadl + "/" + DateTime.Now.ToString("yyyy-MM-ddHHmmss") + ".jpg");
-                            return "345";
-                        });
-
+                    await Task.Run(() =>
+                           {
+                               client.DownloadFileAsync(new Uri(loadPath), pathLoadl + "/" + DateTime.Now.ToString("yyyy-MM-ddHHmmss") + ".mp4");
+                           });
 
                 }
                 catch (Exception)
                 {
-                    throw;
                 }
             }
 
-            return "123";
+            int result = 0;
+            for (int i = 0; i < 200; i++)
+            {
+                result += i;
+            }
+            MessageBox.Show(result + "");
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -134,6 +133,9 @@ namespace 多线程类型
 
             MessageBox.Show(result + "");
 
+
+            MessageBox.Show(result + "12222");
+
         }
 
         private int GetResult()
@@ -141,11 +143,24 @@ namespace 多线程类型
 
             int reuslt = 0;
 
-            for (int i = 0; i < 1000000; i++)
+            for (int i = 0; i < 100000000; i++)
             {
                 reuslt += i;
             }
+            Thread.Sleep(30000);
             return reuslt;
+        }
+
+        /// <summary>
+        /// 请求http接口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            string temp = await HttpRestFul.GetInstance().getClassList();
+
+            MessageBox.Show(temp);
         }
     }
 }

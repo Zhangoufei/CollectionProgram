@@ -104,6 +104,12 @@
     <Compile Include="EventBinding.xaml.cs">
       <DependentUpon>EventBinding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListBoxItemControl.xaml.cs">
+      <DependentUpon>ListBoxItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListBoxWindow.xaml.cs">
+      <DependentUpon>ListBoxWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextBoxBinDing.xaml.cs">
       <DependentUpon>TextBoxBinDing.xaml</DependentUpon>
     </Compile>
@@ -111,6 +117,14 @@
     <Compile Include="ViewModel\Person.cs" />
     <Compile Include="ViewModel\TextBoxBindingViewModel.cs" />
     <Page Include="EventBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListBoxItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListBoxWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

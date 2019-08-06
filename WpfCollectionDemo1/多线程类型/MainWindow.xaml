@@ -14,6 +14,7 @@
             <Button Content="awit添加参数" Click="Button_Click_2" />
             <Button Content="Await" Click="Button_Click_1" />
             <Button Content="Asynce" Click="Button_Click_5" />
+            <Button Content="Asynce请求https 接口" Click="Button_Click_6" />
         </UniformGrid>
     </Grid>
 </Window>

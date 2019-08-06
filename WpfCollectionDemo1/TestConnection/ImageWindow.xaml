@@ -1,0 +1,31 @@
+﻿<Window x:Class="TestConnection.ImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestConnection"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ImageWindow" Height="900" Width="1000">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <ListBox x:Name="listBoxName"  >
+
+            <!-- 横排不换行 -->
+            <!--  <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            -->
+            
+            <!---横排换行-->
+            <ListBox.Template>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                </ControlTemplate>
+            </ListBox.Template>
+        </ListBox>
+    </Grid>
+</Window>

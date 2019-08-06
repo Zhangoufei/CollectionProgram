@@ -36,5 +36,11 @@ namespace MVVM绑定
         {
             Content = new EventBinding();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ListBoxWindow listBoxWindow = new ListBoxWindow();
+            listBoxWindow.Show();
+        }
     }
 }
