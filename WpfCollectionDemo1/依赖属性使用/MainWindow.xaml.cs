@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using 依赖属性使用.Model;
+using dependency.Model;
 
 namespace 依赖属性使用
 {
@@ -18,6 +18,12 @@ namespace 依赖属性使用
             Person person = new Person() { Name = "张三" };
 
             textBolock.DataContext = person;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WindowAddUserControl windowAddUserControl = new WindowAddUserControl();
+            windowAddUserControl.Show();
         }
     }
 }

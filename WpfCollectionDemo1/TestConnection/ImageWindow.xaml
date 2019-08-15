@@ -22,8 +22,12 @@
             
             <!---横排换行-->
             <ListBox.Template>
-                <ControlTemplate TargetType="{x:Type ListBox}">
-                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                <ControlTemplate TargetType="{x:Type ListBox}"  >
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
+                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" 
+                                  />
+
+                    </ScrollViewer>
                 </ControlTemplate>
             </ListBox.Template>
         </ListBox>

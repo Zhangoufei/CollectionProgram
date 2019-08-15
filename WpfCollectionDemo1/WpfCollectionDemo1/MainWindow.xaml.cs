@@ -1,23 +1,11 @@
 ﻿using Com.Tiye.Log;
+using CommonCtrls;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
 using WpfCollectionDemo1.mvvm的使用.UserControl;
+using WPFControlMyself;
 
 namespace WpfCollectionDemo1
 {
@@ -153,6 +141,43 @@ namespace WpfCollectionDemo1
         {
             WindowInkCanvas windowInkCanvas = new WindowInkCanvas();
             windowInkCanvas.Show();
+        }
+
+        private void Button_Click_16(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_17(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void Button_Click_18(object sender, RoutedEventArgs e)
+        {
+            var result = ICMessageBox.Show("你确定要删除当前画板吗 ?", "提示", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ShowDialogWindow showDialogWindow = new ShowDialogWindow();
+                showDialogWindow.Owner = this;
+                showDialogWindow.Show();
+
+            }
+        }
+
+        private void Button_Click_19(object sender, RoutedEventArgs e)
+        {
+            WindowShowDailog windowShowDailog = new WindowShowDailog();
+            windowShowDailog.Owner = this;
+            windowShowDailog.Show();
+        }
+
+        private void Button_Click_20(object sender, RoutedEventArgs e)
+        {
+            QrocodeWindow qrocodeWindow = new QrocodeWindow();
+            qrocodeWindow.Show();
         }
     }
 }

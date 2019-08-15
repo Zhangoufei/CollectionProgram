@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace 依赖属性使用.Model
+namespace dependency.Model
 {
 
     /// <summary>

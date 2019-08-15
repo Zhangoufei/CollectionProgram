@@ -52,6 +52,7 @@ namespace TestConnection
 
             string testUrl = "http://192.168.17.82/";
             List<string> list = new List<string>();
+
             list.Add(testUrl + temp1);
             list.Add(testUrl + temp2);
             list.Add(testUrl + temp3);

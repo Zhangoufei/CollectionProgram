@@ -48,6 +48,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICMessageBox.xaml.cs">
+      <DependentUpon>ICMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowShowDailog.xaml.cs">
+      <DependentUpon>WindowShowDailog.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ICMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -55,6 +65,10 @@
     <Compile Include="CustomControl1.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowShowDailog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -1,0 +1,184 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfDependencyDemo"
+                     xmlns:mybutton="clr-namespace:WpfDependencyDemo.ModelDependency"
+                    >
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+    <!---如果使用引用样式，只能静止更改  -->
+    <Style x:Key="ButtonDefuat" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                         
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsPressBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsPressBackground}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    <!---如果使用自定义属性，默认的颜色都需要添加-->
+    <Style x:Key="ButtonStyleDependency" TargetType="{x:Type mybutton:ButtonDependency}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type mybutton:ButtonDependency}">
+                    <Border x:Name="border" BorderBrush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=BorderBrush}" 
+                            BorderThickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=BorderThickness}" 
+                            Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Background}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                          RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsMouseOverBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsMouseOverBorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsPressedBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsPressedBorderBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsEnabledBackground}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsEnabledBorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <ControlTemplate x:Key="Fbtton_Template" TargetType="mybutton:ButtonDependency" >
+        <Border x:Name="border" Background="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Background}" 
+                Height="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Height}"
+                CornerRadius="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=CornerRadius}"
+                Width="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Width}" >
+
+            <StackPanel  >
+                <TextBlock x:Name="icon"  VerticalAlignment="Center" 
+                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= FIcon}"
+                           FontSize="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= FIconSize}"
+                           Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path= Foreground}">
+                    <TextBlock.RenderTransform>
+                        <RotateTransform x:Name="transIcon" Angle="0"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+
+                <TextBlock VerticalAlignment="Center"  x:Name="txt" HorizontalAlignment="Center"
+                           TextDecorations="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ContentDecorations}"
+                                               Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Content}"
+                                               FontSize="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=FontSize}"
+                                               Foreground="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Foreground}"></TextBlock>
+            </StackPanel>
+        </Border>
+        <!--触发器-->
+        <ControlTemplate.Triggers>
+            <!--设置鼠标进入时的背景、前景样式-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=MouseOverBackground}" TargetName="border" />
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=MouseOverForeground}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=MouseOverForeground}" TargetName="txt"/>
+            </Trigger>
+
+            <!--鼠标按下时的前景、背景样式-->
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=PressedBackground}" TargetName="border" />
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=PressedForeground}" TargetName="icon"/>
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                Path=PressedForeground}" TargetName="txt"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Opacity" Value="0.5" TargetName="border"/>
+            </Trigger>
+
+            <!---添加点击效果-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPressed" Value="true" />
+                    <Condition Property="ClickStyle" Value="Sink" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="border"  Property="Margin" Value="0,1.5,0,-1" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+
+
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+    <!---扩展控件默认样式-->
+    <Style TargetType="{x:Type mybutton:ButtonDependency}" >
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="MouseOverBackground" Value="red" />
+        <Setter Property="MouseOverForeground" Value="{StaticResource ButtonMouseOverForeground}" />
+        <Setter Property="PressedBackground" Value="{StaticResource ButtonPressedBackground}" />
+        <Setter Property="PressedForeground" Value="{StaticResource ButtonPressedForeground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Template" Value="{StaticResource Fbtton_Template}"/>
+        <Setter Property="Padding" Value="3,1,3,1" />
+        <Setter Property="Content" Value="{x:Null}" />
+        <!--<Setter Property="AllowsAnimation" Value="False" />-->
+    </Style>
+
+</ResourceDictionary>

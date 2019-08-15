@@ -8,13 +8,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <UniformGrid  TextElement.FontSize="20" >
+        <UniformGrid  >
             <Button Content="使用依赖属性" Click="Button_Click" />
             <TextBlock x:Name="textBolock" Text="{Binding Name}" />
             <local1:MyButton  Width="250"  Content="使用自定义依赖属性,字体大小不改变" />
             <local1:MyLable  Content="Mylable"   />
             <Label Content="Label内容" Width="250" />
             <Button Content="使用依赖属性" />
+            <Button Content="listBox按钮" Click="Button_Click_1" />
         </UniformGrid>
     </Grid>
 </Window>
