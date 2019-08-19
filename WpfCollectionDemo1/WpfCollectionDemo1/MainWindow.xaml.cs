@@ -1,6 +1,8 @@
 ﻿using Com.Tiye.Log;
 using CommonCtrls;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows;
 using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
@@ -179,5 +181,42 @@ namespace WpfCollectionDemo1
             QrocodeWindow qrocodeWindow = new QrocodeWindow();
             qrocodeWindow.Show();
         }
+
+        private void Button_Click_21(object sender, RoutedEventArgs e)
+        {
+            byte[] mac = new byte[6];
+
+            //MAC地址分配到mac数组中
+            mac[0] = 0x00;
+            mac[1] = 0x01;
+            mac[2] = 0x80;
+            mac[3] = 0x79;
+            mac[4] = 0x08;
+            mac[5] = 0xD8;
+
+            WakeUp(mac);
+        }
+        /// <summary>
+        /// 远程开机，网卡需要具备远程唤醒功能
+        /// </summary>
+        /// <param name="mac">网卡物理地址字符数组</param>
+        public static void WakeUp(byte[] mac)
+        {
+            UdpClient client = new UdpClient();
+            client.Connect(IPAddress.Broadcast, 9090);
+
+            byte[] packet = new byte[17 * 6];
+
+            for (int i = 0; i < 6; i++)
+                packet[i] = 0xFF;
+
+            for (int i = 1; i <= 16; i++)
+                for (int j = 0; j < 6; j++)
+                    packet[i * 6 + j] = mac[j];
+
+            int result = client.Send(packet, packet.Length);
+        }
+
+
     }
 }
