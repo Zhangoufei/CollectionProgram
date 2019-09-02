@@ -44,5 +44,24 @@ namespace TestConnection
             return lastTest;
         }
 
+
+        //查询状态
+        /// <summary>
+        /// 获取班级列表
+        /// </summary>
+        public async Task<string> getClassState(string sercretKey, string classId)
+        {
+            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
+            keyValuePairs.Add("classId", classId);
+            keyValuePairs.Add("sercretKey", sercretKey);
+
+            string strResult = await Task.Run<string>(() =>
+            {
+                return HttpSourceServer.GetResponse("/app/scanCode/getIsScan", keyValuePairs, Request_type.TYPE_POST);
+            });
+
+            return strResult;
+        }
+
     }
 }

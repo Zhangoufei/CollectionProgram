@@ -33,6 +33,7 @@
             <Button Content="弹出MessageBox3" Click="Button_Click_19"  />
             <Button Content="生成二维码" Click="Button_Click_20"  />
             <Button Content="开机启动" Click="Button_Click_21"  />
+            <Button Content="软件重启" Click="Button_Click_22"  />
         </UniformGrid>
 
     </Grid>

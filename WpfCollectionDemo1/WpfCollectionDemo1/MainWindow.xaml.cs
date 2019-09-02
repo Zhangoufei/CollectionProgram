@@ -35,8 +35,13 @@ namespace WpfCollectionDemo1
 
             Closed += MainWindow_Closed;
 
+            Closing += MainWindow_Closing;
 
+        }
 
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+         //   Environment.Exit(0);
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -44,6 +49,8 @@ namespace WpfCollectionDemo1
             //只能进程树关闭
             //System.Windows.Forms.Application.Restart();
             //Application.Current.Shutdown();
+
+        
 
         }
 
@@ -217,6 +224,11 @@ namespace WpfCollectionDemo1
             int result = client.Send(packet, packet.Length);
         }
 
-
+        private void Button_Click_22(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.Application.Restart();
+            Environment.Exit(0);
+            //Application.Current.Shutdown();
+        }
     }
 }

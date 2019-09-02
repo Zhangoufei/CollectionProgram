@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConnection", "TestConne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDependencyDemo", "WpfDependencyDemo\WpfDependencyDemo.csproj", "{ACACEAAC-61B0-4FC9-AF3C-98C3708D5C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UserControl\UserControl.projitems*{337547b3-3857-4dad-936c-cc3b15879c18}*SharedItemsImports = 13
@@ -410,6 +412,18 @@ Global
 		{ACACEAAC-61B0-4FC9-AF3C-98C3708D5C84}.Release|x64.Build.0 = Release|Any CPU
 		{ACACEAAC-61B0-4FC9-AF3C-98C3708D5C84}.Release|x86.ActiveCfg = Release|Any CPU
 		{ACACEAAC-61B0-4FC9-AF3C-98C3708D5C84}.Release|x86.Build.0 = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|x64.Build.0 = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Debug|x86.Build.0 = Debug|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x64.ActiveCfg = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x64.Build.0 = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x86.ActiveCfg = Release|Any CPU
+		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

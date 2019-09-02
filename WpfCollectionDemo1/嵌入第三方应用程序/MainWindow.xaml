@@ -8,10 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Border x:Name="border">
         <UniformGrid>
-            <Button Content="打开第三方程序一" Click="Button_Click" />
-            <Button Content="打开第三方程序2" Click="Button_Click_1" />
+            <Button Content="打开nodePade 只支持nodePad 不支持第三方" Click="Button_Click" />
+            <Button Content="打开notepad2" Click="Button_Click_1" />
             <Button Content="打开第三方程序3"  Click="Button_Click_2" />
-            <Button Content="打开第三方程序4" />
+            <Button Content="打开华为对话 不支持第三方" Click="Button_Click_3" />
             <Button Content="打开第三方程序5" />
             <Button Content="打开第三方程序6" />
         </UniformGrid>

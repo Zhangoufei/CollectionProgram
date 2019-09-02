@@ -15,17 +15,14 @@ namespace 嵌入第三方应用程序
     {
 
 
-        public PDFwindow()
+        public PDFwindow(string filePatch)
         {
             InitializeComponent();
-
-
-            String path = @"D:\Program Files\Notepad++\notepad++.exe"; //VusionDTI  ImAgenGine_MRDP
-            EmbeddedApp ea = new EmbeddedApp(border, 100, 100, path, @"D:\install.log");
+           // String path = @"D:\Program Files\Notepad++\notepad++.exe"; //VusionDTI  ImAgenGine_MRDP
+            EmbeddedApp ea = new EmbeddedApp(border, 100, 100, filePatch, @"D:\install.log");
             border.Child = ea;
+            Thread.Sleep(10000);
         }
-
-     
     }
 
 

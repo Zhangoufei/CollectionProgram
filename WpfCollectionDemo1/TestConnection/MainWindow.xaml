@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
+        <WrapPanel>
             <StackPanel Orientation="Horizontal" Margin="5" >
                 <TextBlock Text="班级Id:" Margin="5" />
                 <TextBox x:Name="classId" Width="500"  FontSize="20" />
@@ -21,11 +21,15 @@
                 <TextBlock Text="秘   钥:"  Margin="5"  />
                 <TextBox x:Name="sercretKey" Text="087b7ab85bdce34fcdbd43cc0af2836b" Width="500" Margin="2,0,0,0" FontSize="20"   />
             </StackPanel>
-            <StackPanel  Orientation="Horizontal" >
-                <Button  x:Name="open" Click="Open_Click"  Content="获取随堂拍" Margin="60,20,20,20" Width="100" />
-                <Button x:Name="clear" Click="Clear_Click" Content="刷新"  Margin="50,20,20,20" Width="100" />
-                <Button x:Name="test" Click="Test_Click" Content="测试数据"  Margin="50,20,20,20" Width="100" />
-            </StackPanel>
-        </StackPanel>
+            <WrapPanel  Orientation="Horizontal" >
+                <Button  x:Name="open" Click="Open_Click"  Content="获取随堂拍" Margin="20" Width="100" />
+                <Button  x:Name="createCode" Click="CreateCode_Click"  Content="生成二维码" Margin="20" Width="100" />
+                <Button x:Name="clear" Click="Clear_Click" Content="刷新"  Margin="20" Width="100" />
+                <Button x:Name="test" Click="Test_Click" Content="测试数据"  Margin="20" Width="100" />
+                <Button x:Name="state" Click="State_Click" Content="查询状态"  Margin="20" Width="100" />
+                <Button x:Name="sercode" Click="Sercode_Click" Content="获取主板序列号"  Margin="20" Width="100" />
+            </WrapPanel>
+            <TextBlock x:Name="stateText"  TextWrapping="Wrap"></TextBlock>
+        </WrapPanel>
     </Grid>
 </Window>

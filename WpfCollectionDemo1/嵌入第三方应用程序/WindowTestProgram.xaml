@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:嵌入第三方应用程序"
-        mc:Ignorable="d" 
-        Title="WindowTestProgram" Height="450" Width="800"  >
+        mc:Ignorable="d"  WindowStartupLocation="CenterScreen"
+        Title="WindowTestProgram" Height="500" Width="250"  >
     <Grid>
         <UniformGrid>
             <Button Content="nodpad++"  Click="Button_Click" />

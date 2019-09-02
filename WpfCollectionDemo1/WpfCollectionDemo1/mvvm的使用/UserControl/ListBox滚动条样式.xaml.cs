@@ -41,6 +41,7 @@ namespace WpfCollectionDemo1.mvvm的使用.UserControl
                     UserName2 = "历史",
                     UserName3 = "玩忘"
                 });
+
             }
            
             UserList.ItemsSource = users;

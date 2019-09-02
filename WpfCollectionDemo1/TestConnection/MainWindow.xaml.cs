@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Management;
 using System.Windows;
 using TestConnection.app;
+using WpfCollectionDemo1;
 
 namespace TestConnection
 {
@@ -22,7 +24,8 @@ namespace TestConnection
             var tempresult = lastTest.data;
             if (tempresult == null || tempresult.imgUrlList == null)
             {
-                MessageBox.Show("数据为:");
+                MessageBox.Show("数据为空");
+                return;
             }
 
 
@@ -63,6 +66,42 @@ namespace TestConnection
 
             ImageWindow imageWindow = new ImageWindow(list);
             imageWindow.Show();
+        }
+
+        private async void State_Click(object sender, RoutedEventArgs e)
+        {
+            string tempResult = await HttpRestFul.GetInstance().getClassState(sercretKey.Text.Trim(), classId.Text.Trim());
+            //查询状态
+            stateText.Text = tempResult;
+        }
+
+        private void CreateCode_Click(object sender, RoutedEventArgs e)
+        {
+            QrocodeWindow qrocodeWindow = new QrocodeWindow(classId.Text.Trim());
+            qrocodeWindow.Show();
+        }
+
+        private void Sercode_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(GetBIOSSerialNumber());
+        }
+
+        public string GetBIOSSerialNumber()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * From Win32_BIOS");
+                string sBIOSSerialNumber = "";
+                foreach (ManagementObject mo in searcher.Get())
+                {
+                    sBIOSSerialNumber = mo["SerialNumber"].ToString().Trim();
+                }
+                return sBIOSSerialNumber;
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }

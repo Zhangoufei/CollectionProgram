@@ -19,7 +19,7 @@ namespace 嵌入第三方应用程序
 
             try
             {
-                PDFwindow pDFwindow = new PDFwindow();
+                PDFwindow pDFwindow = new PDFwindow(@"D:\Program Files\Notepad++\notepad++.exe");
                 //pDFwindow.ShowDialog();
                 pDFwindow.Show();
             }
@@ -48,6 +48,12 @@ namespace 嵌入第三方应用程序
         {
             WindowTestProgram windowTestProgram = new WindowTestProgram();
             windowTestProgram.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            PDFwindow pDFwindow = new PDFwindow(@"D:\Program Files (x86)\TE Desktop\TE_Desktop.exe");
+            pDFwindow.Show();
         }
     }
 }

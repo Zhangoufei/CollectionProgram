@@ -10,26 +10,31 @@
     <Window.Resources>
     </Window.Resources>
     <Grid>
-        <ListBox x:Name="listBoxName"  >
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Button Content="添加图片" Click="Button_Click" />
+            </StackPanel>
+            <ListBox x:Name="listBoxName"   >
 
-            <!-- 横排不换行 -->
-            <!--  <ListBox.ItemsPanel>
+                <!-- 横排不换行 -->
+                <!--  <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
             -->
-            
-            <!---横排换行-->
-            <ListBox.Template>
-                <ControlTemplate TargetType="{x:Type ListBox}"  >
-                    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled">
-                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" 
-                                  />
 
-                    </ScrollViewer>
-                </ControlTemplate>
-            </ListBox.Template>
-        </ListBox>
+                <!---横排换行-->
+                <ListBox.Template>
+                    <ControlTemplate TargetType="{x:Type ListBox}"  >
+                        <ScrollViewer x:Name="scorr" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Height="800" >
+                            <WrapPanel Orientation="Horizontal" IsItemsHost="True" 
+                                  />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ListBox.Template>
+            </ListBox>
+        </StackPanel>
+
     </Grid>
 </Window>
