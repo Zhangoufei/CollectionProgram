@@ -14,6 +14,21 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,8 +83,20 @@
     <Compile Include="pages\ProcessWindow.xaml.cs">
       <DependentUpon>ProcessWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\ScrollTextBlockWindow.xaml.cs">
+      <DependentUpon>ScrollTextBlockWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\ScrollViewerPage.xaml.cs">
       <DependentUpon>ScrollViewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ScrollViewerWindow.xaml.cs">
+      <DependentUpon>ScrollViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SingleChangeWindow.xaml.cs">
+      <DependentUpon>SingleChangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleDictinary\TextBlockScorllContrll.xaml.cs">
+      <DependentUpon>TextBlockScorllContrll.xaml</DependentUpon>
     </Compile>
     <Compile Include="StyleDictinary\UserControlTimer.xaml.cs">
       <DependentUpon>UserControlTimer.xaml</DependentUpon>
@@ -87,6 +114,18 @@
     <Page Include="pages\ProcessWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pages\ScrollTextBlockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\ScrollViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollDictionary2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StyleDictinary\ButtonStyles.xaml">
       <SubType>Designer</SubType>
@@ -137,6 +176,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StyleDictinary\ScrollViewerStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\SingleChangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleDictinary\TextBlockScorllContrll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +239,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\ccc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\dd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\mm.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

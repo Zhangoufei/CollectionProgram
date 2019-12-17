@@ -8,6 +8,9 @@ using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
 using WpfCollectionDemo1.mvvm的使用.UserControl;
 using WPFControlMyself;
+using System.Runtime.InteropServices;  //调用WINDOWS API函数时要用到
+using Microsoft.Win32;  //写入注册表时要用到
+using Com.Zhang.Common;
 
 namespace WpfCollectionDemo1
 {
@@ -229,6 +232,20 @@ namespace WpfCollectionDemo1
             System.Windows.Forms.Application.Restart();
             Environment.Exit(0);
             //Application.Current.Shutdown();
+        }
+
+        private void Button_Click_23(object sender, RoutedEventArgs e)
+        {
+            string temp1 = @"D:\picture\tiye大屏背景\02.jpg";
+
+            SetWallpaper.SetWall(temp1);
+        }
+
+        private void Button_Click_24(object sender, RoutedEventArgs e)
+        {
+            EnlargementShrink enlargementShrink = new EnlargementShrink();
+            enlargementShrink.Owner = this;
+            enlargementShrink.Show();
         }
     }
 }

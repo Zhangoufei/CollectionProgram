@@ -34,6 +34,8 @@
             <Button Content="生成二维码" Click="Button_Click_20"  />
             <Button Content="开机启动" Click="Button_Click_21"  />
             <Button Content="软件重启" Click="Button_Click_22"  />
+            <Button Content="设置背景" Click="Button_Click_23"  />
+            <Button Content="手动放大缩小图片" Click="Button_Click_24"  />
         </UniformGrid>
 
     </Grid>

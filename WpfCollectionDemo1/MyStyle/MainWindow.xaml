@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStyle"
         xmlns:core="clr-namespace:Util.Control.Common;assembly=Util.Control.Common"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid" >
         <UniformGrid>
@@ -16,6 +16,10 @@
             <Button Content="自定义ListBox" Click="Button_Click_4" />
             <Button Content="自定义翻页" Click="Button_Click_5" />
             <Button Content="自定义翻页用户控件" Click="Button_Click_6" />
+            <Button Content="单选样式" Click="Button_Click_7" />
+            <Button Content="文字滚动" Click="Button_Click_8" />
+            <Button Content="打开网页" Click="Button_Click_9" />
+            <Button Content="打开ENB文件" Click="Button_Click_10" />
         </UniformGrid>
     </Grid>
 </Window>

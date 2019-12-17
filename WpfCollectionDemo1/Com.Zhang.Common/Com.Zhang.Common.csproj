@@ -90,6 +90,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonAPI.cs" />
     <Compile Include="HttpConnectionServer.cs" />
     <Compile Include="ICUtility.cs" />
     <Compile Include="JsonHelper.cs" />

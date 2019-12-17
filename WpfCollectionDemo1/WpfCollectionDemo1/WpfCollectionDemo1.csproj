@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{34029E17-15CB-4379-A7F5-FF2811337DF9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>WpfCollectionDemo1</RootNamespace>
     <AssemblyName>WpfCollectionDemo1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -183,12 +183,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnlargementShrink.xaml.cs">
+      <DependentUpon>EnlargementShrink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm的使用\ViewModel\EnlargementShrinkVM.cs" />
     <Compile Include="QrocodeWindow.xaml.cs">
       <DependentUpon>QrocodeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowDialogWindow.xaml.cs">
       <DependentUpon>ShowDialogWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="EnlargementShrink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -457,6 +465,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resource\图片欣赏：Welivedinasmallhouse（夜晚）.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\img_home_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\微信图片_20191205083957.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

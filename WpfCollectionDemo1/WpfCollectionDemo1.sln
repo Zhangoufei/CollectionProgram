@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDependencyDemo", "WpfDep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWrite", "OpenWrite\OpenWrite.csproj", "{966A8D84-2F91-41D8-80D3-184EC89830E7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UserControl\UserControl.projitems*{337547b3-3857-4dad-936c-cc3b15879c18}*SharedItemsImports = 13
@@ -424,6 +426,18 @@ Global
 		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x64.Build.0 = Release|Any CPU
 		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x86.ActiveCfg = Release|Any CPU
 		{A323A60E-2113-4AE7-AAD2-3F17766AE7B4}.Release|x86.Build.0 = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x64.Build.0 = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

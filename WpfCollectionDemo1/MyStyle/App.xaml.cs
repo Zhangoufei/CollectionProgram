@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MyStyle
@@ -13,5 +8,12 @@ namespace MyStyle
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            //SplashScreen splashScreen = new SplashScreen("image/dd.png");
+            SplashScreen splashScreen = new SplashScreen("image/dd.png");
+            splashScreen.Show(true);
+            splashScreen.Close(TimeSpan.FromSeconds(3));
+        }
     }
 }
