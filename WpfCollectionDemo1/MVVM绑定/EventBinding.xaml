@@ -10,7 +10,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EventBinding">
     <Grid>
-        <ListBox x:Name="listBox" >
+        <ListBox x:Name="listBox"   SelectedIndex="{Binding SelectIndex}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >

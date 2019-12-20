@@ -1,0 +1,21 @@
+﻿<Window x:Class="OpenWrite.WindowEraserShap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenWrite"
+        mc:Ignorable="d"
+        Title="WindowEraserShap" Height="450" Width="800">
+    <Grid>
+        <local:InkCanvasTest x:Name="testInkCanvase" Style="{DynamicResource InkCanvasTestStyle1}" />
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
+            <Button Content="画笔" Margin="0,0,20,20" Click="Button_Click"  />
+            <Button Content="橡皮檫" Margin="0,0,20,20"  Click="Button_Click" />
+            <Button Content="画笔" Margin="0,0,20,20" Click="Button_Click"   />
+            <Button Content="画直线" Margin="0,0,20,20" Click="Button_Click"   />
+            <Button Content="画虚线" Margin="0,0,20,20" Click="Button_Click"   />
+            <Button Content="画毛笔" Margin="0,0,20,20" Click="Button_Click"   />
+        </StackPanel>
+    </Grid>
+</Window>

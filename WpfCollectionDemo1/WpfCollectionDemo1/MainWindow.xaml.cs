@@ -247,5 +247,12 @@ namespace WpfCollectionDemo1
             enlargementShrink.Owner = this;
             enlargementShrink.Show();
         }
+
+        private void Button_Click_25(object sender, RoutedEventArgs e)
+        {
+            WindowBigEnlarg windowBigEnlarg = new WindowBigEnlarg();
+            windowBigEnlarg.Owner = this;
+            windowBigEnlarg.Show();
+        }
     }
 }

@@ -8,6 +8,23 @@ namespace MVVM绑定.ViewModel
     {
 
 
+
+        private int selectIndex;
+
+        public int SelectIndex
+        {
+            set
+            {
+                selectIndex = value;
+                RaisePropertyChanged("SelectIndex");
+            }
+            get
+            {
+                return selectIndex;
+            }
+        }
+
+
         private ICommand selectionChanged;
 
         public ICommand SelectionChanged
@@ -32,9 +49,7 @@ namespace MVVM绑定.ViewModel
 
         public EventBindingVm()
         {
-
-
-
+            selectIndex = 6;
         }
 
     }

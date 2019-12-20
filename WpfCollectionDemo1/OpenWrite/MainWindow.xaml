@@ -68,7 +68,7 @@
                     <Button x:Name="btn4" Content="橡皮檫"  Margin="10" Click="Btn4_Click" ></Button>
                 </StackPanel>
                 <InkCanvas x:Name="inkCanvas" ManipulationStarted="InkCanvas_ManipulationStarted" ManipulationDelta="InkCanvas_ManipulationDelta" ManipulationCompleted="InkCanvas_ManipulationCompleted" PreviewTouchDown="InkCanvas_PreviewTouchDown" PreviewTouchUp="InkCanvas_PreviewTouchUp" 
-                            IsManipulationEnabled="True" StrokeErased="InkCanvas_StrokeErased" StrokeCollected="InkCanvas_StrokeCollected"   PreviewMouseLeftButtonDown="InkCanvas_PreviewMouseLeftButtonDown"  PreviewMouseLeftButtonUp="InkCanvas_PreviewMouseLeftButtonUp"
+                            IsManipulationEnabled="True" StrokeErased="InkCanvas_StrokeErased"    PreviewMouseLeftButtonDown="InkCanvas_PreviewMouseLeftButtonDown"  PreviewMouseLeftButtonUp="InkCanvas_PreviewMouseLeftButtonUp" Style="{DynamicResource InkCanvasStyle1}"
                            
                            >
                 </InkCanvas>

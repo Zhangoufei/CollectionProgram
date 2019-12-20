@@ -46,9 +46,6 @@
                             IsManipulationEnabled="True" ManipulationDelta="InkCanvas_ManipulationDelta" ManipulationCompleted="InkCanvas_ManipulationCompleted"  ManipulationInertiaStarting="InkCanvas_ManipulationInertiaStarting" >
                 </InkCanvas>
             </Canvas>
-            
-            
-
 
             <StackPanel Orientation="Horizontal" Height="50"  HorizontalAlignment="Center"   >
                 <Button Content="画笔"  Margin="10" Click="Button_Click_7" />

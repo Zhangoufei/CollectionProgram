@@ -342,7 +342,7 @@ namespace WpfCollectionDemo1
                 double x = e.DeltaManipulation.Translation.X;
                 double y = e.DeltaManipulation.Translation.Y;
                 //if (x < 0 || x > 0) return;
-                scrops.Children.Add(new TranslateTransform() { X = x, Y = y + 5 });
+                scrops.Children.Add(new TranslateTransform() { X = x, Y = y });
                 grid.RenderTransform = scrops;
 
             }
@@ -419,11 +419,11 @@ namespace WpfCollectionDemo1
         private void InkCanvas_ManipulationInertiaStarting(object sender, System.Windows.Input.ManipulationInertiaStartingEventArgs e)
         {
             // 移动惯性
-            e.TranslationBehavior = new InertiaTranslationBehavior()
-            {
-                InitialVelocity = e.InitialVelocities.LinearVelocity,
-                DesiredDeceleration = 1 / (1000.0 * 1000.0)   // 单位：一个WPF单位 / ms
-            };
+            //e.TranslationBehavior = new InertiaTranslationBehavior()
+            //{
+            //    InitialVelocity = e.InitialVelocities.LinearVelocity,
+            //    DesiredDeceleration = 1 / (1000.0 * 1000.0)   // 单位：一个WPF单位 / ms
+            //};
         }
 
 
@@ -491,7 +491,7 @@ namespace WpfCollectionDemo1
             //.Translation.X;
             //double y = e.DeltaManipulation.Translation.Y;
             ////if (x < 0 || x > 0) return;
-            scrops.Children.Add(new TranslateTransform() { X = 0, Y = point.Y});
+            scrops.Children.Add(new TranslateTransform() { X = 0, Y = point.Y });
             testImage.RenderTransform = scrops;
         }
 
