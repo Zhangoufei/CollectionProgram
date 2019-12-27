@@ -90,8 +90,6 @@ namespace UploadStatus
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1.2);
             dispatcherTimer.Start();
-
-
         }
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)

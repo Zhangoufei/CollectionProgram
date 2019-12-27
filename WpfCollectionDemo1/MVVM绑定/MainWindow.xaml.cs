@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,9 @@ namespace MVVM绑定
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Content = new EventBinding();
+            //  Content = new EventBinding();
+            EventBinding eventBinding = new EventBinding();
+            eventBinding.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

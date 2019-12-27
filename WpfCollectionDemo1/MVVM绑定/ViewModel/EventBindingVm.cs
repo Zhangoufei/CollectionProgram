@@ -1,10 +1,11 @@
 ﻿using Com.Zhang.Common;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace MVVM绑定.ViewModel
+namespace MVVM.ViewModel
 {
-    class EventBindingVm : ViewModelBase
+    public class EventBindingVm : ViewModelBase
     {
 
 
@@ -38,7 +39,8 @@ namespace MVVM绑定.ViewModel
 
                     selectionChanged = new RelayCommand((sender) =>
                     {
-                        Users users = (Users)((ListBox)sender).SelectedValue;
+                        // Users users = (Users)((ListBox)sender).SelectedValue;
+                        ListBox users = ((ListBox)sender);
 
                     });
                 }
@@ -47,9 +49,57 @@ namespace MVVM绑定.ViewModel
         }
 
 
+        private MyCommand<MouseEventArgs> mouseLeftButtonDown;
+
+        public MyCommand<MouseEventArgs> MouseLeftButtonDown
+        {
+
+            get
+            {
+
+                if (mouseLeftButtonDown == null)
+                {
+
+                    mouseLeftButtonDown = new MyCommand<MouseEventArgs>(new System.Action<MouseEventArgs>(e =>
+                    {
+
+
+
+                    })
+                    );
+                }
+                return mouseLeftButtonDown;
+            }
+        }
+
+        public ObservableCollection<Users> appItems = new ObservableCollection<Users>();
+
+        public ObservableCollection<Users> AppItems
+        {
+            set
+            {
+                appItems = value;
+            }
+            get
+            {
+                return appItems;
+            }
+        }
+
         public EventBindingVm()
         {
-            selectIndex = 6;
+            for (int i = 0; i < 30; i++)
+            {
+                appItems.Add(new Users()
+                {
+                    UserName = "zhangsn" + i,
+                    UserName2 = "历史" + i,
+                    UserName3 = "玩忘" + i
+                });
+            }
+
+
+            //  selectIndex = 6;
         }
 
     }

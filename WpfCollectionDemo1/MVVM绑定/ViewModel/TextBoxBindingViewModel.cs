@@ -26,12 +26,7 @@ namespace MVVM绑定.ViewModel
 
         public RelayCommand BtnAddContent { set; get; }
 
-
-
         public RelayCommand BtnAddEnter { set; get; }
-
-
-
 
         public TextBoxBindingViewModel()
         {

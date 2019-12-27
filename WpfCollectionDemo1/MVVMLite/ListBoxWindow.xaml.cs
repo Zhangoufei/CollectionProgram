@@ -1,4 +1,4 @@
-﻿using MVVM.ViewModel;
+﻿using MVVMLite.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MVVM
+namespace MVVMLite
 {
     /// <summary>
-    /// EventBinding.xaml 的交互逻辑
+    /// ListBoxWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class EventBinding : Window
+    public partial class ListBoxWindow : Window
     {
-        public EventBinding()
+        public ListBoxWindow()
         {
             InitializeComponent();
 
-            DataContext = new EventBindingVm();
-          
+            DataContext = new ListBoxWindowVM();
         }
-
-
-       
     }
 }

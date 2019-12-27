@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWrite", "OpenWrite\OpenWrite.csproj", "{966A8D84-2F91-41D8-80D3-184EC89830E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMLite", "MVVMLite\MVVMLite.csproj", "{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UserControl\UserControl.projitems*{337547b3-3857-4dad-936c-cc3b15879c18}*SharedItemsImports = 13
@@ -438,6 +440,18 @@ Global
 		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x64.Build.0 = Release|Any CPU
 		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{966A8D84-2F91-41D8-80D3-184EC89830E7}.Release|x86.Build.0 = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|x64.Build.0 = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|x64.ActiveCfg = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|x64.Build.0 = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{C28D64C0-8FEB-4177-ACC8-DDA981A46BC3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
