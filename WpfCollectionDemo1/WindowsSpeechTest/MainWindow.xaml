@@ -1,0 +1,61 @@
+﻿<Window x:Class="WindowsSpeechTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsSpeechTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}" >
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </Grid.Resources>
+        <StackPanel>
+            <GroupBox Height="150" Margin="10" Background="Azure" BorderBrush="Beige" BorderThickness="3" >
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock Text="微软官方Speek" />
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <UniformGrid   Button.Click="Button_Click"  >
+                    <Button Content="简单发音同步播放"  />
+                    <Button Content="简单发音异步播放"   />
+                    <Button Content="复杂发音"    />
+                    <Button Content="复杂发音3"   />
+                    <Button Content="复杂发音4"   />
+                </UniformGrid>
+            </GroupBox>
+            <GroupBox Height="150" Margin="10" BorderBrush="Brown" BorderThickness="3"  Background="Aqua"  >
+                <GroupBox.Header>
+                    <HeaderedContentControl>
+                        <TextBlock Text="语音识别" />
+                    </HeaderedContentControl>
+                </GroupBox.Header>
+                <UniformGrid Button.Click="UniformGrid_Click"   >
+                    <StackPanel Margin="5" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="微软语音识别" Height="20" />
+                            <Button Content="微软语音识别开始"   />
+                            <Button Content="清空" />
+                        </StackPanel>
+                        <TextBlock x:Name="regist" TextWrapping="Wrap"  />
+                    </StackPanel>
+                    <StackPanel Margin="5" >
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="百度语音识别" Height="20" />
+                            <Button Content="百度开始录音" />
+                            <Button Content="百度语音识别开始" />
+                            <Button Content="百度清空" />
+                            <Button Content="结束" />
+                            <TextBlock Text="结束" x:Name="baiduRegist" />
+                        </StackPanel>
+                        <TextBlock Text="识别的文字" TextWrapping="Wrap" x:Name="registGoogle"  Height="100" />
+                    </StackPanel>
+                </UniformGrid>
+            </GroupBox>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -103,9 +103,6 @@
     </Compile>
     <Compile Include="Styles\MyButtonStyle.cs" />
     <Compile Include="Styles\MyButtonStyleCommon.cs" />
-    <Compile Include="pages\OtherButtonPage.xaml.cs">
-      <DependentUpon>OtherButtonPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Styles\MyWrapPanel.cs" />
     <Compile Include="Styles\XTextBox.cs" />
     <Compile Include="pages\TextBoxPage.xaml.cs">
@@ -156,10 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="pages\ListBoxPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages\OtherButtonPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,12 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Util.Control.Common\Util.Control.Common.csproj">
-      <Project>{f99e45b8-0678-4c6e-a16f-1f42033378ac}</Project>
-      <Name>Util.Control.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\aaa.png" />

@@ -6,6 +6,7 @@ using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 
 namespace OpenWrite
 {
@@ -30,9 +31,14 @@ namespace OpenWrite
 
 
             inkCanvas.EraserShape = new RectangleStylusShape(50, 70);
+            inkCanvas.Background = new SolidColorBrush(Colors.Gray);
+
+
             //画笔大小
             drawingAttributes.Height = 5;
             drawingAttributes.Width = 5;
+
+            //drawingAttributes.StylusTipTransform = new Matrix(1, 0, 0, 5, 0, 0);
 
             inkCanvas.Gesture += InkCanvas_Gesture;
             disappearAnimation.Completed += DisappearAnimation_Completed;
@@ -43,22 +49,39 @@ namespace OpenWrite
 
             inkCanvas.IsHitTestVisibleChanged += InkCanvas_IsHitTestVisibleChanged;
 
+
+
+            //画一个形状
+        
+            rectangle.Width = 100;
+            rectangle.Height = 100;
+            rectangle.Fill = new SolidColorBrush(Colors.Aqua);
+
+            inkCanvas.Children.Add(rectangle);
+
         }
+        Rectangle rectangle = new Rectangle();
 
         private void InkCanvas_IsHitTestVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
         }
 
-        protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParams)
-        {
-
-            return null;
-        }
-
         private void InkCanvas_Gesture(object sender, InkCanvasGestureEventArgs e)
         {
             //需要设置识别手势
+
+        }
+
+        protected override void OnStylusDown(StylusDownEventArgs e)
+        {
+            base.OnStylusDown(e);
+
+            EllipseStylusShape eraserTip = new EllipseStylusShape(3, 3, 0);
+            eraseTester =
+                inkCanvas.Strokes.GetIncrementalStrokeHitTester(eraserTip);
+            eraseTester.StrokeHit += new StrokeHitEventHandler(eraseTester_StrokeHit);
+            eraseTester.AddPoints(e.GetStylusPoints(this));
 
         }
 
@@ -144,68 +167,68 @@ namespace OpenWrite
         {
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
              {
-                //   tochtextbox.AppendText("InkCanvas_ManipulationDelta" + "\r\t");
-                TounchIndexNum++;
+                 //   tochtextbox.AppendText("InkCanvas_ManipulationDelta" + "\r\t");
+                 TounchIndexNum++;
 
                  toch_Num.Text = DecTouchsDic.Count + "";
 
-                //  TounchIndex.Text = TounchIndexNum + "";
+                 //  TounchIndex.Text = TounchIndexNum + "";
 
-                try
+                 try
                  {
 
                      sumIndex++;
 
-                    //if (_ScaleXSum > 200) return;
+                     //if (_ScaleXSum > 200) return;
 
-                    //if (_ScaleYSum > 200) return;
+                     //if (_ScaleYSum > 200) return;
 
-                    //if (_TranslationXSum > 500 || _TranslationXSum < -500) return;
-                    //if (_TranslationYSum > 500 || _TranslationYSum < -500) return;
+                     //if (_TranslationXSum > 500 || _TranslationXSum < -500) return;
+                     //if (_TranslationYSum > 500 || _TranslationYSum < -500) return;
 
-                    //if (e.DeltaManipulation.Scale.X == 1 || e.DeltaManipulation.Scale.X <= 0 || e.DeltaManipulation.Scale.Y == 1 || e.DeltaManipulation.Scale.Y <= 0) return;
-                    //if (e.DeltaManipulation.Translation.X <= -100 || e.DeltaManipulation.Translation.Y >= 100) return;
+                     //if (e.DeltaManipulation.Scale.X == 1 || e.DeltaManipulation.Scale.X <= 0 || e.DeltaManipulation.Scale.Y == 1 || e.DeltaManipulation.Scale.Y <= 0) return;
+                     //if (e.DeltaManipulation.Translation.X <= -100 || e.DeltaManipulation.Translation.Y >= 100) return;
 
-                    //  tochtextbox.AppendText("e.DeltaManipulation.Scale.X =" + e.DeltaManipulation.Scale.X + "e.DeltaManipulation.Scale.Y =" + e.DeltaManipulation.Scale.Y + "\r\t");
-                    //ScaleX.Text = e.DeltaManipulation.Scale.X + "";
-                    //ScaleY.Text = e.DeltaManipulation.Scale.Y + "";
+                     //  tochtextbox.AppendText("e.DeltaManipulation.Scale.X =" + e.DeltaManipulation.Scale.X + "e.DeltaManipulation.Scale.Y =" + e.DeltaManipulation.Scale.Y + "\r\t");
+                     //ScaleX.Text = e.DeltaManipulation.Scale.X + "";
+                     //ScaleY.Text = e.DeltaManipulation.Scale.Y + "";
 
 
-                    //_ScaleXSum = _ScaleXSum + e.DeltaManipulation.Scale.X;
-                    //_ScaleYSum = _ScaleYSum + e.DeltaManipulation.Scale.Y;
+                     //_ScaleXSum = _ScaleXSum + e.DeltaManipulation.Scale.X;
+                     //_ScaleYSum = _ScaleYSum + e.DeltaManipulation.Scale.Y;
 
-                    //ScaleXSum.Text = _ScaleXSum + "";
-                    //ScaleYSum.Text = _ScaleYSum + "";
-                    //_ScaleXSum = e.CumulativeManipulation.Scale.X;
-                    //_ScaleYSum = e.CumulativeManipulation.Scale.Y;
-                    //ScaleXSum.Text = e.CumulativeManipulation.Scale.X + "";
-                    //ScaleYSum.Text = e.CumulativeManipulation.Scale.Y + "";
+                     //ScaleXSum.Text = _ScaleXSum + "";
+                     //ScaleYSum.Text = _ScaleYSum + "";
+                     //_ScaleXSum = e.CumulativeManipulation.Scale.X;
+                     //_ScaleYSum = e.CumulativeManipulation.Scale.Y;
+                     //ScaleXSum.Text = e.CumulativeManipulation.Scale.X + "";
+                     //ScaleYSum.Text = e.CumulativeManipulation.Scale.Y + "";
 
-                    //tochtextbox.AppendText("e.DeltaManipulation.Translation.X =" + e.DeltaManipulation.Translation.X + "e.Translation.Y =" + e.DeltaManipulation.Translation.Y + "\r\t");
-                    //TranslationX.Text = e.DeltaManipulation.Translation.X + "";
-                    //TranslationY.Text = e.DeltaManipulation.Translation.Y + "";
+                     //tochtextbox.AppendText("e.DeltaManipulation.Translation.X =" + e.DeltaManipulation.Translation.X + "e.Translation.Y =" + e.DeltaManipulation.Translation.Y + "\r\t");
+                     //TranslationX.Text = e.DeltaManipulation.Translation.X + "";
+                     //TranslationY.Text = e.DeltaManipulation.Translation.Y + "";
 
-                    //_TranslationXSum = _TranslationXSum + e.DeltaManipulation.Translation.X;
-                    //_TranslationYSum = _TranslationYSum + e.DeltaManipulation.Translation.Y;
-                    //TranslationXSum.Text = _TranslationXSum + "";
-                    //TranslationYSum.Text = _TranslationYSum + "";
+                     //_TranslationXSum = _TranslationXSum + e.DeltaManipulation.Translation.X;
+                     //_TranslationYSum = _TranslationYSum + e.DeltaManipulation.Translation.Y;
+                     //TranslationXSum.Text = _TranslationXSum + "";
+                     //TranslationYSum.Text = _TranslationYSum + "";
 
-                    //TranslationXSum.Text = e.CumulativeManipulation.Translation.X + "";
-                    //TranslationYSum.Text = e.CumulativeManipulation.Translation.Y + "";
+                     //TranslationXSum.Text = e.CumulativeManipulation.Translation.X + "";
+                     //TranslationYSum.Text = e.CumulativeManipulation.Translation.Y + "";
 
-                    //_TranslationXSum = e.CumulativeManipulation.Translation.X;
-                    //_TranslationYSum = e.CumulativeManipulation.Translation.Y;
+                     //_TranslationXSum = e.CumulativeManipulation.Translation.X;
+                     //_TranslationYSum = e.CumulativeManipulation.Translation.Y;
 
-                    //tochtextbox.AppendText(e.Device.ToString());
+                     //tochtextbox.AppendText(e.Device.ToString());
 
-                    //if (sumIndex > 20)
-                    //{
-                    //    scrops.Children.Add(new ScaleTransform() { ScaleX = _ScaleXSum, ScaleY = _ScaleYSum });
-                    //    scrops.Children.Add(new TranslateTransform() { X = _TranslationXSum, Y = _TranslationYSum });
-                    //    inkCanvas.RenderTransform = scrops;
-                    //}
+                     //if (sumIndex > 20)
+                     //{
+                     //    scrops.Children.Add(new ScaleTransform() { ScaleX = _ScaleXSum, ScaleY = _ScaleYSum });
+                     //    scrops.Children.Add(new TranslateTransform() { X = _TranslationXSum, Y = _TranslationYSum });
+                     //    inkCanvas.RenderTransform = scrops;
+                     //}
 
-                }
+                 }
                  catch (Exception ee)
                  {
                      tochtextbox.AppendText("异常:" + ee.StackTrace + "\r\t");
@@ -231,7 +254,7 @@ namespace OpenWrite
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
             {
                 tochtextbox.AppendText("InkCanvas_StrokeCollected1" + "\r\t");
-                inkCanvas.EditingMode = InkCanvasEditingMode.None;
+                // inkCanvas.EditingMode = InkCanvasEditingMode.None;
             }));
 
         }
@@ -330,24 +353,7 @@ namespace OpenWrite
 
 
 
-
-
-
         IncrementalStrokeHitTester eraseTester;
-        // Prepare to collect stylus packets. Get the 
-        // IncrementalHitTester from the InkPresenter's 
-        // StrokeCollection and subscribe to its StrokeHitChanged event.
-        protected override void OnStylusDown(StylusDownEventArgs e)
-        {
-            base.OnStylusDown(e);
-
-            EllipseStylusShape eraserTip = new EllipseStylusShape(3, 3, 0);
-            IncrementalStrokeHitTester eraseTester =
-                inkCanvas.Strokes.GetIncrementalStrokeHitTester(eraserTip);
-            eraseTester.StrokeHit += new StrokeHitEventHandler(eraseTester_StrokeHit);
-            eraseTester.AddPoints(e.GetStylusPoints(this));
-
-        }
 
         // Collect the StylusPackets as the stylus moves.
         protected override void OnStylusMove(StylusEventArgs e)

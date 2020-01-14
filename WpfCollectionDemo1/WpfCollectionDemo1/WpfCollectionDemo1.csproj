@@ -448,10 +448,6 @@
       <Project>{103F8339-EDF3-400A-A643-98E18B0D5F8C}</Project>
       <Name>Com.Zhang.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Com.Zhang.Log\Com.Zhang.Log.csproj">
-      <Project>{DC8111D0-9D3B-432D-BE93-704E657FF6A0}</Project>
-      <Name>Com.Zhang.Log</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WPFControlMyself\WPFControlMyself.csproj">
       <Project>{014690CD-BEB8-4A7B-847E-452357B37D04}</Project>
       <Name>WPFControlMyself</Name>

@@ -36,5 +36,8 @@
             <Button Content="倒计时动画4" Margin="5"  Click="Button_Click_6" />
             <Button Content="封面动画封装" Margin="5" Click="Button_Click_7"  />
         </UniformGrid>
+        <UniformGrid Grid.Row="0" Grid.Column="2">
+            <Button Content="打开动画" Margin="5" Click="Button_Click_8" />
+        </UniformGrid>
     </Grid>
 </Window>

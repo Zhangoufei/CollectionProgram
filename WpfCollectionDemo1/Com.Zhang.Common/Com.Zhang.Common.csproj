@@ -69,6 +69,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -94,6 +97,7 @@
     <Compile Include="HttpConnectionServer.cs" />
     <Compile Include="ICUtility.cs" />
     <Compile Include="JsonHelper.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="MyCommand.cs" />
     <Compile Include="MyCommandGeneric.cs" />
     <Compile Include="MyEventCommand.cs" />
@@ -105,12 +109,10 @@
     <Compile Include="windowBaseAPI.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Com.Zhang.Log\Com.Zhang.Log.csproj">
-      <Project>{DC8111D0-9D3B-432D-BE93-704E657FF6A0}</Project>
-      <Name>Com.Zhang.Log</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="log4net.config" />
+    <Content Include="log4netLogger.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

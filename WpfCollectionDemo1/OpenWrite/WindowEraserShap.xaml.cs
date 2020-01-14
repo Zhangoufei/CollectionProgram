@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace OpenWrite
 {
@@ -11,8 +13,17 @@ namespace OpenWrite
         public WindowEraserShap()
         {
             InitializeComponent();
+
+            rectangle.Height = 100;
+            rectangle.Width = 100;
+            rectangle.Fill = new SolidColorBrush(Colors.Aqua);
+
+            testInkCanvase.Children.Add(rectangle);
+
+          
         }
 
+        Rectangle rectangle = new Rectangle();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             testInkCanvase.pointStyle = PointStyle.None;
@@ -34,9 +45,17 @@ namespace OpenWrite
                 case "画毛笔":
                     testInkCanvase.pointStyle = PointStyle.ImageLineMao;
                     break;
+
                 default:
                     break;
             }
+        }
+
+        private void TestInkCanvase_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Point point = e.GetPosition(testInkCanvase);
+            InkCanvas.SetLeft(rectangle, point.X);
+            InkCanvas.SetTop(rectangle, point.Y);
         }
     }
 }

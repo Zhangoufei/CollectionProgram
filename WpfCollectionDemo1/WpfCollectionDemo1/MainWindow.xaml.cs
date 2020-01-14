@@ -197,12 +197,19 @@ namespace WpfCollectionDemo1
             byte[] mac = new byte[6];
 
             //MAC地址分配到mac数组中
-            mac[0] = 0x00;
-            mac[1] = 0x01;
-            mac[2] = 0x80;
-            mac[3] = 0x79;
-            mac[4] = 0x08;
-            mac[5] = 0xD8;
+            //mac[0] = 0x00;
+            //mac[1] = 0x01;
+            //mac[2] = 0x80;
+            //mac[3] = 0x79;
+            //mac[4] = 0x08;
+            //mac[5] = 0xD8;
+
+            mac[0] = 0xEC;
+            mac[1] = 0xD6;
+            mac[2] = 0x8A;
+            mac[3] = 0x28;
+            mac[4] = 0x4F;
+            mac[5] = 0xDD;
 
             WakeUp(mac);
         }

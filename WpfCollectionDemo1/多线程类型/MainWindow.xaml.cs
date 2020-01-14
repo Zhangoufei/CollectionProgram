@@ -162,5 +162,15 @@ namespace 多线程类型
 
             MessageBox.Show(temp);
         }
+
+
+
+
+        private async void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(5000);
+            MessageBox.Show("加载完毕!");
+
+        }
     }
 }

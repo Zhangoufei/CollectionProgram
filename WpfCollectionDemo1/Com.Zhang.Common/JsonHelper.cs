@@ -55,12 +55,12 @@ namespace Utility
         }
 
         /// <summary>
-        /// JSON反序列化：将JSON字符串解析成预定的数据类型
+        /// JSON反序列化：将JSON字符串解析成预定的数据类型  一般不能用
         /// </summary>
         /// <typeparam name="T">泛型：需要反序列化返回的数据类型</typeparam>
         /// <param name="jsonString">输入需要解析的字符内容</param>
         /// <returns>返回指定的数据类型</returns>
-        public static T DeserializeObject<T>(string jsonString)
+        private static T DeserializeObject<T>(string jsonString)
         {
             return JsonConvert.DeserializeObject<T>(jsonString);
         }

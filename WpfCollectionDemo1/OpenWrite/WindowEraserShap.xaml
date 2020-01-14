@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="WindowEraserShap" Height="450" Width="800">
     <Grid>
-        <local:InkCanvasTest x:Name="testInkCanvase" Style="{DynamicResource InkCanvasTestStyle1}" />
+        <local:InkCanvasTest x:Name="testInkCanvase" Style="{DynamicResource InkCanvasTestStyle1}" MouseMove="TestInkCanvase_MouseMove"  >
+          
+        </local:InkCanvasTest>
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" >
             <Button Content="画笔" Margin="0,0,20,20" Click="Button_Click"  />

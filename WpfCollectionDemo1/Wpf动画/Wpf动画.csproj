@@ -103,6 +103,9 @@
     <Compile Include="CSDN\TestAnimation1.xaml.cs">
       <DependentUpon>TestAnimation1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyAnimation\EasyAnimation.xaml.cs">
+      <DependentUpon>EasyAnimation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Test1.xaml.cs">
       <DependentUpon>Test1.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyAnimation\EasyAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StyleDictionamry\CoverFlowBaseStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

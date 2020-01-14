@@ -15,6 +15,7 @@
             <Button Content="Await" Click="Button_Click_1" />
             <Button Content="Asynce" Click="Button_Click_5" />
             <Button Content="Asynce请求https 接口" Click="Button_Click_6" />
+            <Button Content="daly使用" Click="Button_Click_7" />
         </UniformGrid>
     </Grid>
 </Window>

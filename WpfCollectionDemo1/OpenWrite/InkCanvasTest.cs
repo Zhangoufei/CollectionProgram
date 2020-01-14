@@ -126,6 +126,22 @@ namespace OpenWrite
             }
         }
 
+        IncrementalStrokeHitTester eraseTester;
+        // Prepare to collect stylus packets. Get the 
+        // IncrementalHitTester from the InkPresenter's 
+        // StrokeCollection and subscribe to its StrokeHitChanged event.
+        protected override void OnStylusDown(StylusDownEventArgs e)
+        {
+            base.OnStylusDown(e);
+
+            EllipseStylusShape eraserTip = new EllipseStylusShape(3, 3, 0);
+            IncrementalStrokeHitTester eraseTester =
+                this.Strokes.GetIncrementalStrokeHitTester(eraserTip);
+            //eraseTester.StrokeHit += new StrokeHitEventHandler(eraseTester_StrokeHit);
+            eraseTester.AddPoints(e.GetStylusPoints(this));
+
+        }
+
     }
 
 

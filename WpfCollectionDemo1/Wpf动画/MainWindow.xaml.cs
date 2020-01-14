@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using Wpf动画.CSDN;
+using Wpf动画.MyAnimation;
 
 namespace Wpf动画
 {
@@ -83,6 +84,12 @@ namespace Wpf动画
              });
             ccc.Init(list);
             ccc.Show();
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            EasyAnimation easyAnimation = new EasyAnimation();
+            easyAnimation.Show();
         }
     }
 }

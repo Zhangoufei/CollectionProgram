@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,10 +58,18 @@
     </ApplicationDefinition>
     <Compile Include="ChinesebrushRenderer.cs" />
     <Compile Include="ChinesebrushStroke.cs" />
+    <Compile Include="EaraWindow.xaml.cs">
+      <DependentUpon>EaraWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InkCanvaseMode.cs" />
     <Compile Include="WindowEraserShap.xaml.cs">
       <DependentUpon>WindowEraserShap.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EaraWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
