@@ -71,7 +71,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{6314CECC-4028-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFSqlite", "EFSqlite\EFSqlite.csproj", "{F6F3C8E4-A68A-45E3-B510-6DFD3FA34E5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCefMp4", "..\..\..\..\..\Test\C#\TestCefMp4\TestCefMp4.csproj", "{98137F9C-0986-429F-BD6A-36618E9C75D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCefMp4", "TestCefMp4\TestCefMp4.csproj", "{98137F9C-0986-429F-BD6A-36618E9C75D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
