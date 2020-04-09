@@ -1,5 +1,7 @@
 ﻿using Com.Tiye.Log;
+using Com.Zhang.Common;
 using CommonCtrls;
+using Microsoft.Win32;  //写入注册表时要用到
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -8,9 +10,6 @@ using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
 using WpfCollectionDemo1.mvvm的使用.UserControl;
 using WPFControlMyself;
-using System.Runtime.InteropServices;  //调用WINDOWS API函数时要用到
-using Microsoft.Win32;  //写入注册表时要用到
-using Com.Zhang.Common;
 
 namespace WpfCollectionDemo1
 {
@@ -44,7 +43,7 @@ namespace WpfCollectionDemo1
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-         //   Environment.Exit(0);
+            //   Environment.Exit(0);
         }
 
         private void MainWindow_Closed(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace WpfCollectionDemo1
             //System.Windows.Forms.Application.Restart();
             //Application.Current.Shutdown();
 
-        
+
 
         }
 
@@ -260,6 +259,96 @@ namespace WpfCollectionDemo1
             WindowBigEnlarg windowBigEnlarg = new WindowBigEnlarg();
             windowBigEnlarg.Owner = this;
             windowBigEnlarg.Show();
+        }
+
+        private void Button_Click_26(object sender, RoutedEventArgs e)
+        {
+            DropWindow dropWindow = new DropWindow();
+            dropWindow.Show();
+        }
+
+        private void Button_Click_27(object sender, RoutedEventArgs e)
+        {
+            Drop2Window dropWindow = new Drop2Window();
+            dropWindow.Show();
+        }
+
+        private void Button_Click_28(object sender, RoutedEventArgs e)
+        {
+            var temp = GetRegedit(@"Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache", "AnyDesk");
+        }
+
+        //获取是否安装aiclass 
+        /// <summary>
+        /// 判断学乐云是否安装 
+        /// </summary>
+        /// <param name="keystring"></param>
+        /// <returns></returns>
+        public static string GetXueleYunRegedit(string keystring, string getValuePath)
+        {
+            RegistryKey key = Registry.CurrentUser;
+            try
+            {
+                RegistryKey software = key.OpenSubKey(keystring, true);
+                var result = software.GetValue(getValuePath);
+                if (software != null && result != null)
+                {
+                    return result.ToString();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
+
+        public static string GetRegedit(string keystring, string getValuePath)
+        {
+            RegistryKey key = Registry.CurrentUser;
+            try
+            {
+                RegistryKey software = key.OpenSubKey(keystring, true);
+
+                var temp = software.GetValueNames();
+                foreach (var item in temp)
+                {
+                    var result = software.GetValue(item);
+                    if (result.ToString().ToLower().Contains("anydesk"))
+                    {
+                        return item.Substring(0, item.LastIndexOf("."));
+                    }
+                }
+                return "";
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
+        }
+
+        private void Button_Click_29(object sender, RoutedEventArgs e)
+        {
+            string temp = "";
+
+            if (string.IsNullOrEmpty(temp))
+            {
+                MessageBox.Show("空字符串");
+            }
+
+            string temp2 = null;
+            if (string.IsNullOrEmpty(temp2))
+            {
+                MessageBox.Show("null字符串");
+            }
+            string temp3 = string.Empty;
+            if (string.IsNullOrEmpty(temp3))
+            {
+                MessageBox.Show("Empty字符串");
+            }
         }
     }
 }

@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfCollectionDemo1.DropWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCollectionDemo1"
+        xmlns:viewmodel="clr-namespace:WpfCollectionDemo1.mvvm的使用.ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:custom="clr-namespace:WpfCollectionDemo1.Common"
+        mc:Ignorable="d"
+        Title="DropWindow" Height="750" Width="800">
+    <Grid x:Name="grid" >
+        <Grid.Resources>
+            <viewmodel:UrlConvertBitmapImage x:Key="urlConvertBitmapImage" />
+
+            <TransformGroup x:Key="ImageCompareResources">
+                <ScaleTransform />
+                <TranslateTransform/>
+            </TransformGroup>
+
+        </Grid.Resources>
+        <Canvas x:Name="canvastest">
+            <ListBox Panel.ZIndex="0" x:Name="listBox" Width="450" Height="350"  ItemsSource="{Binding PictureInfors}"   MouseMove="ListBox_MouseMove" MouseUp="ListBox_MouseUp"  
+                     ManipulationBoundaryFeedback="ListBox_ManipulationBoundaryFeedback"
+                     TouchDown="ListBox_TouchDown"
+                     >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Height="60" >
+                            <TextBlock Text="{Binding TitleName}" Margin="10,10,10,10" VerticalAlignment="Center" />
+                            <Image Source="{Binding PicImage,Converter={StaticResource urlConvertBitmapImage}}" Height="100" Width="100" MouseLeftButtonDown="Image_MouseLeftButtonDown" Tag="{Binding PicImage}"  >
+                            </Image>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <TextBlock x:Name="textBox" Canvas.Top="100" Canvas.Left="550"   Text="你好" Height="20" Width="100" AllowDrop="True" Drop="TextBlock_Drop"  MouseMove="TextBox_MouseMove" MouseDown="TextBox_MouseDown"  RenderTransform="{StaticResource ImageCompareResources}"  ></TextBlock>
+
+            <TextBlock x:Name="textBox2" Canvas.Top="100" Canvas.Left="550"  Text="拖放" HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" MouseDown="TextBox2_MouseDown" />
+
+            <Image x:Name="imageDrop" Panel.ZIndex="2"  Canvas.Top="100" Canvas.Left="650"  Source="{Binding PicImageDrop,Converter={StaticResource urlConvertBitmapImage}}"    Height="50" Width="50"  
+                   MouseMove="ImageDrop_MouseMove"
+                   MouseLeftButtonDown="ImageDrop_MouseLeftButtonDown"
+                   MouseUp="ImageDrop_MouseUp"
+                 
+                   />
+
+            <Image x:Name="imageDrop2" Canvas.Top="200" Canvas.Left="650"   Source="{Binding PicImageDrop,Converter={StaticResource urlConvertBitmapImage}}"   Height="50" Width="50"  MouseDown="ImageDrop2_MouseDown" >
+                <i:Interaction.Behaviors>
+                    <custom:DragInCanvasBehavior/>
+                </i:Interaction.Behaviors>
+            </Image>
+
+            <Border x:Name="border" Canvas.Top="400" Panel.ZIndex="1" Canvas.Left="150" Width="500"  BorderBrush="Aquamarine" BorderThickness="25" AllowDrop="True" Drop="Border_Drop" MouseEnter="Border_MouseEnter"  >
+                <TextBlock x:Name="textBox3" Text="拖放区域" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>

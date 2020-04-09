@@ -16,6 +16,7 @@
             <Button Content="Asynce" Click="Button_Click_5" />
             <Button Content="Asynce请求https 接口" Click="Button_Click_6" />
             <Button Content="daly使用" Click="Button_Click_7" />
+            <Button Content="Dispatcher" Click="Button_Click_8" />
         </UniformGrid>
     </Grid>
 </Window>

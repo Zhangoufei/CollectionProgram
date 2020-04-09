@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="ViewModel\TimerClick.cs" />
     <Compile Include="ViewModel\WPFtoGIFVM.cs" />
+    <Compile Include="VisibleWindow.xaml.cs">
+      <DependentUpon>VisibleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF制作GIF动画.xaml.cs">
       <DependentUpon>WPF制作GIF动画.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tes弹出动画1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisibleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

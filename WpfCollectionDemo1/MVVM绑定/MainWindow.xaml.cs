@@ -45,5 +45,11 @@ namespace MVVM绑定
             ListBoxWindow listBoxWindow = new ListBoxWindow();
             listBoxWindow.Show();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            ProgressWindow progressWindow = new ProgressWindow();
+            progressWindow.Show();
+        }
     }
 }

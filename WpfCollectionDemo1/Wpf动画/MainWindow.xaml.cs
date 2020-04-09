@@ -91,5 +91,11 @@ namespace Wpf动画
             EasyAnimation easyAnimation = new EasyAnimation();
             easyAnimation.Show();
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            VisibleWindow visibleWindow = new VisibleWindow();
+            visibleWindow.Show();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Interop;
 
 namespace 嵌入第三方应用程序
@@ -86,5 +87,8 @@ namespace 嵌入第三方应用程序
         {
 
         }
+     
     }
+
+
 }

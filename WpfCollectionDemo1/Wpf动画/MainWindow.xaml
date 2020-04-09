@@ -38,6 +38,7 @@
         </UniformGrid>
         <UniformGrid Grid.Row="0" Grid.Column="2">
             <Button Content="打开动画" Margin="5" Click="Button_Click_8" />
+            <Button Content="窗体显示动画" Margin="5" Click="Button_Click_9" />
         </UniformGrid>
     </Grid>
 </Window>

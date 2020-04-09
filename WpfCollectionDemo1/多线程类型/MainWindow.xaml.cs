@@ -172,5 +172,35 @@ namespace 多线程类型
             MessageBox.Show("加载完毕!");
 
         }
+
+
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            ThreadPool.QueueUserWorkItem(GetResult);
+        }
+
+
+        private void GetResult(object inputNum)
+        {
+            double result = CalsSum(959000000);
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                MessageBox.Show(result + "");
+            }));
+
+        }
+
+        private double CalsSum(Int64 inputNum)
+        {
+
+            double sum = 0;
+            for (int i = 0; i < inputNum; i++)
+            {
+                sum += inputNum;
+            }
+            return sum;
+
+        }
     }
 }

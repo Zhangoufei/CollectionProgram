@@ -39,7 +39,7 @@ namespace TestConnection
                  return HttpSourceServer.GetResponse("/app/takePhotoClass/getLast", keyValuePairs, Request_type.TYPE_POST);
              });
 
-            LastTest lastTest = JsonHelper.DeserializeObject<LastTest>(strResult);
+            LastTest lastTest = JsonHelper.JsonDeserialize<LastTest>(strResult);
 
             return lastTest;
         }

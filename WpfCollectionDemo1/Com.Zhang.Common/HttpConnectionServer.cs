@@ -274,4 +274,45 @@ namespace Com.Zhang.Common
     }
 
 
+    /// <summary>
+    /// 浪潮服务器地址调用
+    /// </summary>
+    public class HttpLangCaoeServer
+    {
+        static string strServer = ConfigurationManager.AppSettings["connectionLangCao"];
+
+        public static async Task<string> GetResponse(string strSubAddress, Dictionary<string, string> pairs, Request_type type = Request_type.TYPE_GET)
+        {
+            //if (!ICUtility.Ping(strServer)) return "";
+            string url = "";
+            if (strServer.Contains("http"))
+            {
+                url = strServer + "/" + strSubAddress;
+            }
+            else
+            {
+                url = "http://" + strServer + "/" + strSubAddress;
+            }
+
+            return await HttpServer.GetHttpResponse(url, pairs, 4000, type);
+        }
+
+
+        public static bool pingPort()
+        {
+            bool result = HttpServer.pingPort(strServer);
+            if (result)
+            {
+                return true;
+            }
+            else
+            {
+                Logger.Error("服务器不通:" + strServer);
+                return false;
+            }
+        }
+        //服务器连接状态
+        public static bool IsServerConnected { get; set; } = false;
+    }
+   
 }

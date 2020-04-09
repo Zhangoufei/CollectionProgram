@@ -157,9 +157,7 @@
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net40\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -183,9 +181,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\DragInCanvasBehavior.cs" />
+    <Compile Include="Drop2Window.xaml.cs">
+      <DependentUpon>Drop2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DropWindow.xaml.cs">
+      <DependentUpon>DropWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnlargementShrink.xaml.cs">
       <DependentUpon>EnlargementShrink.xaml</DependentUpon>
     </Compile>
+    <Compile Include="mvvm的使用\ViewModel\DropWindowVm.cs" />
     <Compile Include="mvvm的使用\ViewModel\EnlargementShrinkVM.cs" />
     <Compile Include="QrocodeWindow.xaml.cs">
       <DependentUpon>QrocodeWindow.xaml</DependentUpon>
@@ -196,6 +202,14 @@
     <Compile Include="WindowBigEnlarg.xaml.cs">
       <DependentUpon>WindowBigEnlarg.xaml</DependentUpon>
     </Compile>
+    <Page Include="Drop2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DropWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EnlargementShrink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

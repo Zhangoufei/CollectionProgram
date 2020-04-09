@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Com.Zhang.Common;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
@@ -96,9 +99,9 @@ namespace 嵌入第三方应用程序
 
             string paht = @"D:\Program Files (x86)\TE Desktop/" + "TE_Desktop.exe";
 
-           Execute(paht, stringBuider.ToString());
+            Execute(paht, stringBuider.ToString());
 
-           // ShellExecute(IntPtr.Zero, "open", paht, stringBuider.ToString(), null, ShowWindowCommands.SW_SHOWNORMAL);
+            // ShellExecute(IntPtr.Zero, "open", paht, stringBuider.ToString(), null, ShowWindowCommands.SW_SHOWNORMAL);
         }
 
 
@@ -112,9 +115,40 @@ namespace 嵌入第三方应用程序
        ShowWindowCommands FsShowCmd
    );
 
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            UtilityCommon.FindExeProcess("TE_Desktop");
+
+            FindProcess("TE_Desktop");
+        }
 
 
+        /// <summary>
+        /// 找到指定的进程名称
+        /// </summary>
+        /// <param name="processName"></param>
+        public static bool FindProcess(string processName)
+        {
+            try
+            {
+                Process[] processlist = Process.GetProcesses();
+
+                List<Process> resultList = new List<Process>();
+
+                var temp = processlist.FirstOrDefault(p => p.ProcessName == processName);
+                if (temp != null)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ee)
+            {
+
+            }
+            return false;
+        }
     }
+
 
 
     public enum ShowWindowCommands : int

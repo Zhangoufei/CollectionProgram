@@ -127,6 +127,9 @@
     <Compile Include="VmsDemo.xaml.cs">
       <DependentUpon>VmsDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowBehaviiors.xaml.cs">
+      <DependentUpon>WindowBehaviiors.xaml</DependentUpon>
+    </Compile>
     <Page Include="Behaviors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VmsDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowBehaviiors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Data;
+using System.Windows.Media.Imaging;
 
 namespace WpfCollectionDemo1.mvvm的使用.ViewModel
 {
-    [ValueConversion(typeof(decimal),typeof(string))]
+    [ValueConversion(typeof(decimal), typeof(string))]
     public class ConvertTest : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -30,4 +28,34 @@ namespace WpfCollectionDemo1.mvvm的使用.ViewModel
             return value;
         }
     }
+
+    public class UrlConvertBitmapImage : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value == null)
+                return null;
+
+            string tempresult = value.ToString();
+
+
+            BitmapImage bitmapImage = new BitmapImage();
+
+            bitmapImage.BeginInit();
+
+            bitmapImage.UriSource = new System.Uri(tempresult, UriKind.Absolute);
+
+            bitmapImage.DecodePixelWidth = 800;
+
+            bitmapImage.EndInit();
+
+            return bitmapImage;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }

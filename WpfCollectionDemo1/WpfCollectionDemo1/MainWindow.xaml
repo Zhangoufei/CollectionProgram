@@ -37,6 +37,10 @@
             <Button Content="设置背景" Click="Button_Click_23"  />
             <Button Content="手动放大缩小图片" Click="Button_Click_24"  />
             <Button Content="手动放大缩小图片2" Click="Button_Click_25"  />
+            <Button Content="文件拖拽打开" Click="Button_Click_26"  />
+            <Button Content="文件拖拽打开2" Click="Button_Click_27"  />
+            <Button Content="获取注册表信息" Click="Button_Click_28"  />
+            <Button Content="验证3种空字符串" Click="Button_Click_29"  />
         </UniformGrid>
 
     </Grid>

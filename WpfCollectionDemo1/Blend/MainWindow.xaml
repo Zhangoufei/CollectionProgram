@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <UniformGrid>
+            <Button Content="两点之间动画" Click="Button_Click" />
+            <Button Content="0" />
+            <Button Content="0" />
+            <Button Content="0" />
+            <Button Content="0" />
+        </UniformGrid>
     </Grid>
 </Window>

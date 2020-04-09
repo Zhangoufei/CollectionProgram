@@ -1,0 +1,15 @@
+﻿<Window x:Class="GrammerDemo.Model.ThreadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GrammerDemo.Model"
+        mc:Ignorable="d"
+        Title="ThreadWindow" Height="450" Width="800">
+    <Grid>
+        <UniformGrid>
+            <Button Content="Task使用"  Click="Button_Click" />
+            <Button Content="Task异步调用和取数据"  Click="Button_Click_1" />
+        </UniformGrid>
+    </Grid>
+</Window>

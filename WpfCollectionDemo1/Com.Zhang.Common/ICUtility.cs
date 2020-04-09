@@ -35,10 +35,16 @@ namespace Utility
                 return false;
 
             Ping pingSender = new Ping();
-            if (ip.Contains(":"))
+            if (ip.Contains("http"))
+            {
+
+
+            }
+            else
             {
                 ip = ip.Substring(0, ip.IndexOf(':'));
             }
+         
             try
             {
                 PingReply reply = pingSender.Send(ip, 120);//第一个参数为ip地址，第二个参数为ping的时间
@@ -53,7 +59,7 @@ namespace Utility
                     //ping不通
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return false;
             }

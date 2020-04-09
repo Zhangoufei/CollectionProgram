@@ -36,7 +36,13 @@ namespace Blend
 
             //Content = new ListBoxBoradry();
 
-            Content = new TimeComplate();
+            //Content = new TimeComplate();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowBehaviiors windowBehaviiors = new WindowBehaviiors();
+            windowBehaviiors.Show();
         }
     }
 }

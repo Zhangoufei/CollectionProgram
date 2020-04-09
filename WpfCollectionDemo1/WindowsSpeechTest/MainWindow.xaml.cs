@@ -109,14 +109,14 @@ namespace WindowsSpeechTest
 
                 case "百度开始录音":
 
-                    //开始录音  15s后关闭录音，开始识别
+                    //开始录音  3s后关闭录音，开始识别
                     startRecord = true;
                     record.StartRecord(path);
                     button.IsEnabled = false;
 
                     //15s录音 开始识别
                     DispatcherTimer dispatcherTimer = new DispatcherTimer();
-                    dispatcherTimer.Interval = TimeSpan.FromSeconds(5);
+                    dispatcherTimer.Interval = TimeSpan.FromSeconds(3);
                     dispatcherTimer.Tag = button;
                     dispatcherTimer.Tick += DispatcherTimer_Tick;
                     dispatcherTimer.Start();

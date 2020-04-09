@@ -8,6 +8,9 @@
         Title="WindowTestProgram" Height="500" Width="250"  >
     <Grid>
         <UniformGrid>
+            
+            
+            
             <Button Content="nodpad++"  Click="Button_Click" />
             <Button Content="nodpad++"  />
             <Button Content="nodpad++"  />
