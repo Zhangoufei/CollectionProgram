@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfCollectionDemo1.mvvm的使用.UserControl
 {
@@ -23,6 +11,29 @@ namespace WpfCollectionDemo1.mvvm的使用.UserControl
         public TablControl2()
         {
             InitializeComponent();
+        }
+
+        int sumIndex = 0;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            sumIndex++;
+            if (sumIndex > 2)
+            {
+                sumIndex = 0;
+            }
+            tabContle1.SelectedIndex = sumIndex;
+
+           // titleTabl.IsSelected = true;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            tabContle1.SelectedIndex = 0;
+        }
+
+        private void TabContle1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

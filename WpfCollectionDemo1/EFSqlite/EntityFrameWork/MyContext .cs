@@ -8,10 +8,9 @@ namespace EFSqlite.EntityFrameWork
     {
         public MyContext(DbConnection conn) : base(conn, false)
         {
-
         }
 
-        public DbSet<Actress> ActressSet { get; set; }
-
+        public DbSet<NoteModel> NoteModels { get; set; }
+      
     }
 }

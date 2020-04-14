@@ -65,7 +65,7 @@ namespace MVVMLite
 
             var temp2 = IC.GetValueNames();
 
-            var tempIndex = temp2.FirstOrDefault(p=>p.Contains("wisdom_class.exe"));
+            var tempIndex = temp2.FirstOrDefault(p => p.Contains("wisdom_class.exe"));
 
             UtilityCommon.StartExE(tempIndex);
             if (IC == null)
@@ -100,17 +100,22 @@ namespace MVVMLite
                 SevenZipCompressor.SetLibraryPath(@"7z.dll");
             }
 
-            SevenZipExtractor sevenZipExtractor = new SevenZipExtractor(@"D:\TIYE\Dowload\Xuele.7z");
-            //sevenZipExtractor.FileExtractionFinished += (ssd, mm) =>
-            //{
-            //    MessageBox.Show("解压完成");
-            //};
+            SevenZipExtractor sevenZipExtractor = new SevenZipExtractor(@"D:\TIYE\Dowload\TE_Desktop.7z");
+            int sumFile = 0;
+            sevenZipExtractor.FileExtractionFinished += (ssd, mm) =>
+            {
+                sumFile++;
+                if (sumFile == sevenZipExtractor.FilesCount)
+                {
+                    MessageBox.Show("解压完成");
+                }
+            };
             sevenZipExtractor.BeginExtractArchive(@"D:\TIYE\Soft");
+
         }
 
         private async Task DownlowadUrl()
         {
-
             DownloadModel downloadModel = new DownloadModel();
             downloadModel.Url = "https://m.xueleyun.com/download/wisdom_class/cpp";
             downloadModel.Name = "AIClass";

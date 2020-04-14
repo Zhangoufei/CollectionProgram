@@ -118,16 +118,24 @@
     </Page.Resources>
 
     <Grid HorizontalAlignment="Center">
-        <TabControl Style="{DynamicResource TabControlStyle1}">
-            <TabItem Header="标题" Style="{DynamicResource TabItemStyle1}" >
-                <TextBox Text="您" />
-            </TabItem>
-            <TabItem Header="标题2" Style="{DynamicResource TabItemStyle1}" >
-                <TextBox Text="您222" />
-            </TabItem>
-            <TabItem Header="标题2" Style="{DynamicResource TabItemStyle1}" >
-                <TextBox Text="您222" />
-            </TabItem>
-        </TabControl>
+        <StackPanel>
+            <StackPanel Margin="20" >
+                <Button Content="切换下一个tabl" Click="Button_Click" />
+            </StackPanel>
+            <TabControl Style="{DynamicResource TabControlStyle1}" x:Name="tabContle1" SelectionChanged="TabContle1_SelectionChanged"  >
+                <TabItem Header="标题" Style="{DynamicResource TabItemStyle1}" >
+                    <TextBox Text="您" />
+                </TabItem>
+                <TabItem Header="标题2" Style="{DynamicResource TabItemStyle1}" >
+                    <TextBox Text="您222" />
+                </TabItem>
+                <TabItem Header="标题2" Style="{DynamicResource TabItemStyle1}" x:Name="titleTabl" >
+                    <Grid>
+                        <TextBox Text="您222" />
+                        <Button Click="Button_Click_1" Content="点击" />
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </Page>

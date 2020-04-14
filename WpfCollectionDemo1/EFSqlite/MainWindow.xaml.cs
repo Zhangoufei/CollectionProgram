@@ -1,20 +1,7 @@
-﻿using EFSqlite.DbModel;
-using EFSqlite.EntityFrameWork;
+﻿using EFSqlite.EntityFrameWork;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EFSqlite
 {
@@ -30,7 +17,15 @@ namespace EFSqlite
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+
+            using (var context = new MyContext(new SQLiteConnection(@"D:\DataBase\Note.DB")))
+            {
+                context.SaveChanges();
+            }
+
         }
+
+
+
     }
 }

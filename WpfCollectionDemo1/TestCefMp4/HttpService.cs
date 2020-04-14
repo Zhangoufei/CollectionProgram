@@ -1,8 +1,5 @@
 ﻿using Com.Zhang.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Utility;
 
@@ -34,19 +31,18 @@ namespace TestCefMp4
         /// <summary>
         /// access_token的接口
         /// </summary>
-        public static async Task<string> GetAccesssToken(string sercretKey, string userId, string classId)
+        public static async Task<SecretClientModel> GetAccesssToken(string client_id, string client_secret, string grant_type)
         {
             Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
-            keyValuePairs.Add("client_id", 20+"");
-            keyValuePairs.Add("client_secret", "e169a0d2b72d5d74f8f1957305ca0126");
-            keyValuePairs.Add("grant_type", "client_credentials");
+            keyValuePairs.Add("client_id", client_id);
+            keyValuePairs.Add("client_secret", client_secret);
+            keyValuePairs.Add("grant_type", grant_type);
 
             string strResult = await Task.Run<string>(() =>
             {
-                return HttpLangCaoeServer.GetResponse("/auth/oauth", keyValuePairs, Request_type.TYPE_GET);
+                return HttpLangCaoeServer.GetResponse("/auth/oauth/token", keyValuePairs, Request_type.TYPE_GET);
             });
-
-            string lastTest = JsonHelper.JsonDeserialize<string>(strResult);
+            SecretClientModel lastTest = JsonHelper.JsonDeserialize<SecretClientModel>(strResult);
 
             return lastTest;
         }
@@ -54,21 +50,32 @@ namespace TestCefMp4
         /// <summary>
         /// 验证用户名和密码的接口
         /// </summary>
-        public static async Task<string> CheckUserAndPassword(string sercretKey, string userId, string classId)
+        public static async Task<string> CheckUserAndPassword(string userId, string passwd, string client_id, string client_secret)
         {
             Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
-            keyValuePairs.Add("userid", "001986030");
-            keyValuePairs.Add("passwd", "tiye@123");
+            keyValuePairs.Add("userId", userId);
+            keyValuePairs.Add("passwd", passwd);
+            keyValuePairs.Add("client_id", client_id);
+            keyValuePairs.Add("client_secret", client_secret);
 
             string strResult = await Task.Run<string>(() =>
             {
                 return HttpLangCaoeServer.GetResponse("/auth/api/inspur/uc/validatePassword/1.0", keyValuePairs, Request_type.TYPE_GET);
             });
 
-            string lastTest = JsonHelper.JsonDeserialize<string>(strResult);
-
-            return lastTest;
+            return strResult;
         }
+
+    }
+
+    public class SecretClientModel
+    {
+
+        public string access_token { set; get; }
+
+        public string token_type { set; get; }
+
+        public string expires_in { set; get; }
 
     }
 }
