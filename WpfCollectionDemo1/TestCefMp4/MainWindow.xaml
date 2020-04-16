@@ -26,8 +26,10 @@
             <Button Content="退一步"  Height="50" Width="50" Margin="10,20,0,0"  Click="Button_Click_1" />
             <Button Content="显示f12"  Height="50" Width="50" Margin="10,20,0,0"   Click="Button_Click_2" />
         </StackPanel>
-        <Grid x:Name="grid" Grid.Row="1" Margin="10,50,0,0" >
-            <wflib:ChromiumWebBrowser x:Name="brower"  />
-        </Grid>
+        <ScrollViewer Grid.Row="1" >
+            <Grid x:Name="grid"  Margin="10,50,0,0" >
+                <wflib:ChromiumWebBrowser x:Name="brower"  />
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

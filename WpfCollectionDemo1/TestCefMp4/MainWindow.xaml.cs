@@ -31,6 +31,7 @@ namespace TestCefMp4
 
             settings.CefCommandLineArgs.Add("proxy-auto-detect", "0");
             settings.CefCommandLineArgs.Add("no-proxy-server", "1");
+            //settings.Locale = "zh-CN";
 
             Cef.Initialize(settings);
 

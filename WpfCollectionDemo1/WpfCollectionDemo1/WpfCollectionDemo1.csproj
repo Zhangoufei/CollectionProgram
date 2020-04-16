@@ -462,10 +462,6 @@
       <Project>{103F8339-EDF3-400A-A643-98E18B0D5F8C}</Project>
       <Name>Com.Zhang.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WPFControlMyself\WPFControlMyself.csproj">
-      <Project>{014690CD-BEB8-4A7B-847E-452357B37D04}</Project>
-      <Name>WPFControlMyself</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
