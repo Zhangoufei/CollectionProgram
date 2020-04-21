@@ -18,6 +18,7 @@
             <Button Content="文字滚动" Click="Button_Click_8" />
             <Button Content="打开网页" Click="Button_Click_9" />
             <Button Content="打开ENB文件" Click="Button_Click_10" />
+            <Button Content="阴影" Click="Button_Click_11" />
         </UniformGrid>
     </Grid>
 </Window>

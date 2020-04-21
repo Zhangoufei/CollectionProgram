@@ -21,10 +21,7 @@ namespace TestCefMp4
         {
             InitializeComponent();
 
-            var settings = new CefSettings()
-            {
-                BrowserSubprocessPath = "CefSharp.BrowserSubprocess.exe"
-            }; ;
+            var settings = new CefSettings();
             settings.CefCommandLineArgs.Add("disable-gpu", "1");
             settings.CefCommandLineArgs.Add("force-device-scale-factor", "2");
             settings.CefCommandLineArgs["touch-events"] = "enabled";
@@ -49,6 +46,8 @@ namespace TestCefMp4
             brower.FrameLoadEnd += Brower_FrameLoadEnd;
 
             brower.FrameLoadStart += Brower_FrameLoadStart;
+
+            //brower.Address = "http://www.zzbz.net/home/indexpc";
 
         }
 

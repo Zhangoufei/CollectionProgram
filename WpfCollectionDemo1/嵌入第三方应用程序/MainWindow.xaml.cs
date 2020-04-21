@@ -65,7 +65,7 @@ namespace 嵌入第三方应用程序
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Execute(@"D:\Program Files (x86)\TE Desktop/" + "TE_Desktop.exe", "cloudlink://welinksoftclient/h5page?page=launch");
+            Execute(@"D:\TIYE\Soft\TE_Desktop\TE_Desktop.exe","");
         }
         private static string Execute(string exePath, string parameters)
         {
@@ -147,6 +147,29 @@ namespace 嵌入第三方应用程序
             }
             return false;
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            string pName = "Te_Desktop";//要启动的进程名称，可以在任务管理器里查看，一般是不带.exe后缀的;
+            Process[] temp = Process.GetProcessesByName(pName);//在所有已启动的进程中查找需要的进程；
+            if (temp.Length > 0)//如果查找到
+            {
+                IntPtr handle = temp[0].MainWindowHandle;
+                //SwitchToThisWindow(handle, true);    // 激活，显示在最前
+
+                SetForegroundWindow(handle);
+            }
+            else
+            {
+                Process.Start(pName + ".exe");//否则启动进程
+            }
+        }
+
+        [DllImport("user32.dll")]
+        public static extern void SwitchToThisWindow(IntPtr hWnd, bool fAltTab);
+
+        [DllImport("USER32.DLL")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
     }
 
 

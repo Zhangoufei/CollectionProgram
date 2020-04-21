@@ -115,5 +115,11 @@ namespace MyStyle
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Maximized;
             process.Start();
         }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            WindowStyle windowStyle = new WindowStyle();
+
+        }
     }
 }
