@@ -6,8 +6,19 @@
         mc:Ignorable="d"
         Title="WindowStyle" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <Button Content="项目" />
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <Border Height="50" Width="100" Margin="10" Cursor="Hand"   >
+                <Border.Effect >
+                    <DropShadowEffect ShadowDepth="20"  BlurRadius="15" Color="Blue" />
+                </Border.Effect>
+                <TextBlock Text="按钮" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <Border Height="50" Width="100" Margin="10" Cursor="Hand" BorderBrush="Gray" BorderThickness="1"  >
+                <Border.Effect >
+                    <DropShadowEffect ShadowDepth="0"  BlurRadius="15" Color="BlueViolet" />
+                </Border.Effect>
+                <TextBlock Text="按钮" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" />
+            </Border>
         </StackPanel>
     </Grid>
 </Window>

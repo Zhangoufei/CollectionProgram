@@ -16,6 +16,8 @@
             <Button Content="打开第三方程序6" Click="Button_Click_5" />
             <Button Content="查找应用程序是否运行" Click="Button_Click_6" />
             <Button Content="打开第三方应用程序置前" Click="Button_Click_7" />
+            <Button Content="打开第三方应用程序置前方式2" Click="Button_Click_8" />
+            <Button Content="打开第三方应用程序置前方式3" Click="Button_Click_9" />
         </UniformGrid>
     </Border>
 </Window>

@@ -7,8 +7,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/FlipClock.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Util.Control.Common;component/Style/Themes/FIcon.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Util.Control.Common;component/Control/FButton.xaml" />
                 <ResourceDictionary Source="StyleDictinary/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="StyleDictinary/ScrollViewerStyles.xaml"/>
                 <ResourceDictionary Source="StyleDictinary/ListBoxStylesDe.xaml"/>

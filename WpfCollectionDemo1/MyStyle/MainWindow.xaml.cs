@@ -1,5 +1,6 @@
 ﻿using MyStyle.pages;
 using MyStyle.Styles;
+using MyStyle.window;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -118,8 +119,8 @@ namespace MyStyle
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
-            WindowStyle windowStyle = new WindowStyle();
-
+            WindowStyleStyle windowStyle = new WindowStyleStyle();
+            windowStyle.Show();
         }
     }
 }

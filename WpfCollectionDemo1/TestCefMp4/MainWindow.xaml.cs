@@ -28,7 +28,6 @@ namespace TestCefMp4
 
             settings.CefCommandLineArgs.Add("proxy-auto-detect", "0");
             settings.CefCommandLineArgs.Add("no-proxy-server", "1");
-            //settings.Locale = "zh-CN";
 
             Cef.Initialize(settings);
 
@@ -135,12 +134,7 @@ namespace TestCefMp4
 
                 brower.GetSourceAsync().ContinueWith(taskinfo =>
                 {
-
-
                     ////string temp = taskinfo.Result;
-
-
-
 
                     ////添加css3样式
                     //string linkText = "<link rel=" + AppDomain.CurrentDomain.BaseDirectory + "//" + "StyleSheet1.css>";

@@ -1,6 +1,5 @@
 ﻿using Com.Tiye.Log;
 using Com.Zhang.Common;
-using CommonCtrls;
 using Microsoft.Win32;  //写入注册表时要用到
 using System;
 using System.Net;
@@ -9,7 +8,6 @@ using System.Windows;
 using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
 using WpfCollectionDemo1.mvvm的使用.UserControl;
-using WPFControlMyself;
 
 namespace WpfCollectionDemo1
 {
@@ -167,22 +165,12 @@ namespace WpfCollectionDemo1
 
         private void Button_Click_18(object sender, RoutedEventArgs e)
         {
-            var result = ICMessageBox.Show("你确定要删除当前画板吗 ?", "提示", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                ShowDialogWindow showDialogWindow = new ShowDialogWindow();
-                showDialogWindow.Owner = this;
-                showDialogWindow.Show();
-
-            }
+           
         }
 
         private void Button_Click_19(object sender, RoutedEventArgs e)
         {
-            WindowShowDailog windowShowDailog = new WindowShowDailog();
-            windowShowDailog.Owner = this;
-            windowShowDailog.Show();
+         
         }
 
         private void Button_Click_20(object sender, RoutedEventArgs e)

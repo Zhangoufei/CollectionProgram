@@ -1,5 +1,4 @@
-﻿using CommonCtrls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,13 +26,6 @@ namespace WpfCollectionDemo1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var result = ICMessageBox.Show("你确定要删除当前画板吗 ?", "提示", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-            {
-
-
-            }
         }
     }
 }
