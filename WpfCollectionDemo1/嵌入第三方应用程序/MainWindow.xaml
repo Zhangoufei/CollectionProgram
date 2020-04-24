@@ -18,6 +18,7 @@
             <Button Content="打开第三方应用程序置前" Click="Button_Click_7" />
             <Button Content="打开第三方应用程序置前方式2" Click="Button_Click_8" />
             <Button Content="打开第三方应用程序置前方式3" Click="Button_Click_9" />
+            <Button Content="打开第三方应用程序置前方式4" Click="Button_Click_10" />
         </UniformGrid>
     </Border>
 </Window>

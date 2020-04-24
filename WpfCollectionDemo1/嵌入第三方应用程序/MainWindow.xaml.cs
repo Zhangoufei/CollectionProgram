@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Interop;
 
@@ -66,7 +67,7 @@ namespace 嵌入第三方应用程序
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Execute(@"D:\TIYE\Soft\TE_Desktop\TE_Desktop.exe","");
+            Execute(@"D:\TIYE\Soft\TE_Desktop\TE_Desktop.exe", "");
         }
         private static string Execute(string exePath, string parameters)
         {
@@ -182,9 +183,9 @@ namespace 嵌入第三方应用程序
             this.ShowActivated = false;
             this.Focus();
         }
-      
 
-        private static void StartProcess(object obj)
+
+        private void StartProcess(object obj)
         {
             try
             {
@@ -192,15 +193,38 @@ namespace 嵌入第三方应用程序
                 process.StartInfo.FileName = obj.ToString();
                 process.Start();
 
+                //process.StartInfo.UseShellExecute = false;
+                //process.StartInfo.RedirectStandardInput = true;
+                //process.StartInfo.RedirectStandardOutput = true;
+                //process.StartInfo.RedirectStandardError = true;
+                //process.WaitForExit();//等待进程关闭或退出后执行以下步骤
+
+                //process.WaitForInputIdle();
+                //第二种
+                //IntPtr intptr=  windowBaseAPI.FindWindow(null, processName);
+                // windowBaseAPI.ShowWindow(intptr,1);
+
+              Process [] processes=   Process.GetProcessesByName(processName);
+
+                process.Exited += (sender, ee) =>
+                {
+
+
+                };
+
                 IntPtr prsmwh = process.MainWindowHandle;
                 while (prsmwh == IntPtr.Zero)
                 {
                     prsmwh = process.MainWindowHandle;
+                    Thread.Sleep(100);
+                    process.Refresh();
                 }
 
-                windowBaseAPI.SetWindowPos(process.MainWindowHandle);
+                //windowBaseAPI.SetWindowPos(intptr);
 
-                windowBaseAPI.SetForegroundWindow(process.MainWindowHandle);
+                //IntPtr temp = Process.GetProcessesByName(processName)[0].MainWindowHandle;
+
+                windowBaseAPI.SetForegroundWindow(prsmwh);
                 //if (process.Start())
                 //{
                 //    windowBaseAPI.SetWindowPos(process.MainWindowHandle);
@@ -219,6 +243,7 @@ namespace 嵌入第三方应用程序
             try
             {
                 Process process = new Process();
+                process.Refresh();
                 process.StartInfo.FileName = obj.ToString();
                 process.Start();
                 //if (process.Start())
@@ -254,9 +279,15 @@ namespace 嵌入第三方应用程序
             }
         }
         string processName = "TE_Desktop";
-       
 
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            Process[] pr = System.Diagnostics.Process.GetProcessesByName(processName);
 
+            IntPtr intptr = pr[0].MainWindowHandle;
+            SwitchToThisWindow(intptr, true);    // 激活，显示在最前  
+
+        }
     }
 
 

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace MyStyle.pages
 {
@@ -19,7 +21,7 @@ namespace MyStyle.pages
             {
                 list.Add(new Person()
                 {
-                    Name = "张三"+i,
+                    Name = "张三" + i,
                     Age = 12,
                     Email = "23333",
                     Sex = 1
@@ -33,7 +35,22 @@ namespace MyStyle.pages
             listBehavioer.ItemsSource = list;
         }
 
+        private void MyListBoxDefualt_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+        
+        }
 
+        private void MyListBoxDefualt_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var temp = e.Timestamp;
+            myListBoxDefualt.PreviewMouseWheel += (senderss, eee) =>
+            {
+                var eventArg = new MouseWheelEventArgs(e.MouseDevice, temp, e.Delta);
+                eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+                eventArg.Source = sender;
+                this.myListBoxDefualt.RaiseEvent(eventArg);
+            };
+        }
     }
 
     public class Person
