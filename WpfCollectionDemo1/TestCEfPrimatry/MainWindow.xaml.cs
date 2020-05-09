@@ -1,5 +1,7 @@
 ﻿using CefSharp.Wpf;
+using System;
 using System.Text;
+using System.Threading;
 using System.Windows;
 
 namespace TestCEfPrimatry
@@ -12,29 +14,45 @@ namespace TestCEfPrimatry
         private ChromiumWebBrowser webView;
         public MainWindow()
         {
+
             InitializeComponent();
+
+
 
             var setting = new CefSettings();
 
             // 设置语言
-            setting.Locale = "zh-CN";
+            // setting.Locale = "zh-CN";
             //cef设置userAgent
-            setting.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
+            //setting.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
             //配置浏览器路径
             setting.BrowserSubprocessPath = @"x86\CefSharp.BrowserSubprocess.exe";
             setting.CefCommandLineArgs.Add("proxy-auto-detect", "0");
             setting.CefCommandLineArgs.Add("no-proxy-server", "1");
             CefSharp.Cef.Initialize(setting, performDependencyCheck: true, browserProcessHandler: null);
 
+            //webview.PreviewTextInput += (obj, args) =>
+            //{
+            //    foreach (var character in args.Text)
+            //    {
+            //        // 把每个字符向浏览器组件发送一遍
+            //        webview.GetBrowser().GetHost().SendKeyEvent((int)WM.CHAR, (int)character, 0);
+            //    }
+
+            //    // 不让cef自己处理
+            //    args.Handled = true;
+            //};
 
             webView = new ChromiumWebBrowser();
-            this.Content = webView;
+            grid.Children.Add(webView);
 
-            //webView.Address = "http://www.zzbz.net/home/indexpc";
 
-            Init();
+            //this.Content = webView;
+
+            webView.Address = "www.baidu.com";
+
+            // Init();
         }
-
 
         private async void Init()
         {
@@ -64,6 +82,11 @@ namespace TestCEfPrimatry
 
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            webView.Address = "www.baidu.com";
         }
     }
 }

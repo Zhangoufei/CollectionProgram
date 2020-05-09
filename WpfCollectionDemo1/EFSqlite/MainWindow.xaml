@@ -5,10 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EFSqlite"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <Canvas>
-            <Button Content="添加数据" Click="Button_Click" Canvas.Left="100" Canvas.Top="100" Background="AntiqueWhite" BorderThickness="0" Height="25" Width="80" />
-        </Canvas>
+        <StackPanel HorizontalAlignment="Center" >
+            <TextBlock x:Name="textBlock" Text="ddd" FontSize="30" Margin="20" />
+            <StackPanel Orientation="Horizontal"  >
+                <Button Content="添加数据" Click="AddButton_Click" Background="AntiqueWhite" BorderThickness="0" Height="25" Width="80" Margin="0,0,0,0" />
+                <Button Content="修改数据" Click="UpdateButton_Click" Background="Azure" BorderThickness="0" Height="25" Width="80"  Margin="20,0,0,0" />
+                <Button Content="查询数据" Click="QueryButton_Click" Background="FloralWhite" BorderThickness="0" Height="25" Width="80"  Margin="20,0,0,0" />
+                <Button Content="删除数据" Click="DeleteButton_Click" Background="Azure" BorderThickness="0" Height="25" Width="80"  Margin="20,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,10" HorizontalAlignment="Left" >
+                <TextBlock Text="编号" Margin="0,0,0,0" Width="50" />
+                <TextBlock Text="姓名" Margin="18,0,0,0"  Width="50" />
+                <TextBlock Text="年龄" Margin="8,0,0,0"  Width="30"  />
+                <TextBlock Text="性别" Margin="10,0,0,0"  Width="30"  />
+                <TextBlock Text="创建时间" Margin="30,0,0,0"  />
+            </StackPanel>
+            <ListBox x:Name="listData" BorderBrush="Transparent" HorizontalAlignment="Left" Height="300" Width="400"  >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical" /> 
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ListBox.Template>
+                    <ControlTemplate>
+                        <Border x:Name="Bd" 
+                                Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false"  >
+                                <ItemsPresenter Width="350" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                </MultiTrigger.Conditions>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </ListBox.Template>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal"  >
+                            <TextBlock Text="{Binding ID}" Margin="0,0,0,0" Width="50" />
+                            <TextBlock Text="{Binding Name}" Margin="10,0,0,0"  Width="50"  />
+                            <TextBlock Text="{Binding Age}" Margin="10,0,0,0"  Width="30"  />
+                            <TextBlock Text="{Binding Gender}" Margin="10,0,0,0"  Width="30"  />
+                            <TextBlock Text="{Binding CreateTime,StringFormat=yyyy-MM-dd HH:mm:ss}" Margin="10,0,0,0"    />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </Window>

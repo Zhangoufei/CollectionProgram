@@ -8,5 +8,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Width="500" Height="30" />
+                <Button Content="转到" Background="Transparent" BorderBrush="Transparent" Margin="2,0,0,0" Click="Button_Click" />
+            </StackPanel>
+            <!--<cef:ChromiumWebBrowser   x:Name="webview" Height="900" />-->
+            <Grid x:Name="grid"  Height="900" ></Grid>
+        </StackPanel>
+       
     </Grid>
 </Window>
