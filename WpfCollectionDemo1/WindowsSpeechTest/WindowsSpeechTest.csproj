@@ -156,10 +156,6 @@
       <Project>{75819C1C-712E-4B1C-9245-5486E27AE686}</Project>
       <Name>Media</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NSpeex\NSpeex.csproj">
-      <Project>{2bc7389d-32fe-4b53-8c0d-a1caa7947161}</Project>
-      <Name>NSpeex</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

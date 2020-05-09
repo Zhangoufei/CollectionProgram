@@ -25,7 +25,7 @@ namespace TestEgdeDemo
             InitializeComponent();
 
 
-           WebView.Navigate("http://www.baidu.com");
+          // WebView.Navigate("http://www.baidu.com");
         }
     }
 }
