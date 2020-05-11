@@ -12,6 +12,9 @@ namespace EFSqlite.EntityFrameWork
         //定义属性，便于外部访问数据表
         public DbSet<Student> Students { get { return Set<Student>(); } }
 
+        //定义属性，便于外部访问数据表
+        public DbSet<Teacher> Teachers { get { return Set<Teacher>(); } }
+
         public StudentContext() : base("SQLiteConnect")
         {
 
@@ -20,9 +23,9 @@ namespace EFSqlite.EntityFrameWork
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            ModelConfiguration.Configure(modelBuilder);
-            var init = new SqliteDropCreateDatabaseWhenModelChanges<StudentContext>(modelBuilder);
-            Database.SetInitializer(init);
+            //ModelConfiguration.Configure(modelBuilder);
+            //var init = new SqliteDropCreateDatabaseWhenModelChanges<StudentContext>(modelBuilder);
+            //Database.SetInitializer(init);
         }
 
     }
@@ -37,6 +40,7 @@ namespace EFSqlite.EntityFrameWork
         private static void ConfigureBookEntity(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>();
+            modelBuilder.Entity<Teacher>();
         }
     }
     

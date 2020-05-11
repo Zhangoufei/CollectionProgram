@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" MinWidth="600" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listTable" Grid.Column="0" >
+        </ListBox>
+        
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1" >
             <TextBlock x:Name="textBlock" Text="ddd" FontSize="30" Margin="20" />
             <StackPanel Orientation="Horizontal"  >
                 <Button Content="添加数据" Click="AddButton_Click" Background="AntiqueWhite" BorderThickness="0" Height="25" Width="80" Margin="0,0,0,0" />
@@ -58,5 +66,6 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
+        
     </Grid>
 </Window>

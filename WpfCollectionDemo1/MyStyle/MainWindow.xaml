@@ -19,6 +19,15 @@
             <Button Content="打开网页" Click="Button_Click_9" />
             <Button Content="打开ENB文件" Click="Button_Click_10" />
             <Button Content="阴影" Click="Button_Click_11" />
+            <Expander Header="Check the Answer" ExpandDirection="Down">
+                <StackPanel>
+                    <RadioButton>A.母猪变成猴子！</RadioButton>
+                    <RadioButton>B.世界本末倒置！</RadioButton>
+                    <RadioButton>C.树倒猢狲散！</RadioButton>
+                    <RadioButton>D.女人不爱钱了!</RadioButton>
+                </StackPanel>
+            </Expander>
+  
         </UniformGrid>
     </Grid>
 </Window>

@@ -17,6 +17,23 @@ namespace EFSqlite
         public MainWindow()
         {
             InitializeComponent();
+
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new StudentContext())
+            {
+                if (db.Database.CreateIfNotExists())
+                {
+                    
+                }
+                else
+                {
+
+                }
+            }
         }
 
         /// <summary>
@@ -55,7 +72,7 @@ namespace EFSqlite
 
             using (var db = new StudentContext())
             {
-                var students = db.Students.AsQueryable().OrderByDescending(p => p.ID).ToList();
+                var students = db.Students.OrderByDescending(p => p.ID).ToList();
 
                 listData.ItemsSource = students;
 
