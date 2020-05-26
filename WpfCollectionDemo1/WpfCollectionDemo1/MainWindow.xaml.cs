@@ -8,6 +8,7 @@ using System.Windows;
 using WpfCollectionDemo1.Common;
 using WpfCollectionDemo1.mvvm的使用.baseControl;
 using WpfCollectionDemo1.mvvm的使用.UserControl;
+using WpfCollectionDemo1.mvvm的使用.window;
 
 namespace WpfCollectionDemo1
 {
@@ -165,12 +166,12 @@ namespace WpfCollectionDemo1
 
         private void Button_Click_18(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void Button_Click_19(object sender, RoutedEventArgs e)
         {
-         
+
         }
 
         private void Button_Click_20(object sender, RoutedEventArgs e)
@@ -337,6 +338,32 @@ namespace WpfCollectionDemo1
             {
                 MessageBox.Show("Empty字符串");
             }
+        }
+
+        private void Button_Click_30(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_31(object sender, RoutedEventArgs e)
+        {
+            string temp = string.Empty;
+            if (2 == 1 && temp == "2")
+            {
+                MessageBox.Show("333");
+
+            }
+
+
+            PenWindow penWindow = new PenWindow();
+
+            penWindow.Show();
+        }
+
+        private void Button_Click_32(object sender, RoutedEventArgs e)
+        {
+            TextBoxWindow textBoxWindow = new TextBoxWindow();
+            textBoxWindow.Show();
         }
     }
 }

@@ -12,10 +12,22 @@
             <Button Content="按钮样式1" Style="{DynamicResource ButtonStyle1}"  />
             <locals:MyButtonStyle Content="自定义按钮使用依赖属性"   Style="{StaticResource MyButton}"  MyBackgroundPress="Azure" />
             <Button Content="按钮样式3"  Style="{StaticResource MyButtonStyleDemo1}" />
-            <Button Content="按钮模板修改内联定义"  >
+            <Button Content="按钮模板修改内联定义" Width="50" Height="50"  >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="5" >
+                            <ContentPresenter Margin="{TemplateBinding Padding}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              />
+                        </Border>
 
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Margin" TargetName="border" Value="-10" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        
                     </ControlTemplate>
                 </Button.Template>
             </Button>
@@ -28,6 +40,13 @@
             <Button Content="按钮的样式"  Style="{StaticResource ButtonStylesDemo}" />
 
             <locals:MyButtonStyleCommon Content="按钮下沉效果"  Background="Aqua" PressedForeground="BlueViolet" PressedBackground="Blue" MouseOverBackground="Red" CornerRadius="5"  ClickStyle="Sink"  />
+
+            <Button Content="自定义样式按钮" >
+                <Button.Style>
+                    <Style>
+                    </Style>
+                </Button.Style>
+            </Button>
         </UniformGrid>
     </Grid>
 </Page>

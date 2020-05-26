@@ -41,6 +41,9 @@
             <Button Content="文件拖拽打开2" Click="Button_Click_27"  />
             <Button Content="获取注册表信息" Click="Button_Click_28"  />
             <Button Content="验证3种空字符串" Click="Button_Click_29"  />
+            <Button Content="播放ppt未完成" Click="Button_Click_30"  />
+            <Button Content="wpf中的画笔" Click="Button_Click_31"  />
+            <Button Content="wpf文本框加水印" Click="Button_Click_32" />
         </UniformGrid>
 
     </Grid>

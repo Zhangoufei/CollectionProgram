@@ -105,6 +105,15 @@
     <Reference Include="ShowMeTheXAML, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ShowMeTheXAML.1.0.11-ci49\lib\net45\ShowMeTheXAML.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Presentation.5.4.2\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=6.4.5.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Presentation.5.4.2\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=5.4.2.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Presentation.5.4.2\lib\net46\Spire.Presentation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
@@ -182,6 +191,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\DragInCanvasBehavior.cs" />
+    <Compile Include="Common\PasswordBoxWaterMark.cs" />
     <Compile Include="Drop2Window.xaml.cs">
       <DependentUpon>Drop2Window.xaml</DependentUpon>
     </Compile>
@@ -193,6 +203,12 @@
     </Compile>
     <Compile Include="mvvm的使用\ViewModel\DropWindowVm.cs" />
     <Compile Include="mvvm的使用\ViewModel\EnlargementShrinkVM.cs" />
+    <Compile Include="mvvm的使用\window\PenWindow.xaml.cs">
+      <DependentUpon>PenWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm的使用\window\TextBoxWindow.xaml.cs">
+      <DependentUpon>TextBoxWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QrocodeWindow.xaml.cs">
       <DependentUpon>QrocodeWindow.xaml</DependentUpon>
     </Compile>
@@ -320,6 +336,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="mvvm的使用\UserControl\滚动条样式2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm的使用\window\PenWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm的使用\window\TextBoxWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -484,6 +508,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resource\微信图片_20191205083957.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
