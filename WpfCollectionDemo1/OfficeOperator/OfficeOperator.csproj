@@ -79,12 +79,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OfficeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PDFWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OfficeWindow.xaml.cs">
+      <DependentUpon>OfficeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OperatePPT.cs" />
     <Compile Include="PDFWindow.xaml.cs">
       <DependentUpon>PDFWindow.xaml</DependentUpon>
