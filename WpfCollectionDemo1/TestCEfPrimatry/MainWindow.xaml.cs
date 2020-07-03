@@ -49,7 +49,7 @@ namespace TestCEfPrimatry
 
             //this.Content = webView;
 
-            webView.Address = "www.baidu.com";
+            webView.Address = "http://yw.chinatiye.cn:8000/#/index";
 
             // Init();
         }

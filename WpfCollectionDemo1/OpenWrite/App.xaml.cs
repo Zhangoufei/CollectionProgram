@@ -11,9 +11,9 @@ namespace OpenWrite
 
         public App()
         {
-            StartupUri = new Uri("WindowEraserShap.xaml", UriKind.Relative);
+           // StartupUri = new Uri("WindowEraserShap.xaml", UriKind.Relative);
 
-            //StartupUri = new Uri("MainWindow.xaml", UriKind.Relative);
+           StartupUri = new Uri("MainWindow.xaml", UriKind.Relative);
 
             //StartupUri = new Uri("EaraWindow.xaml", UriKind.Relative);
         }
