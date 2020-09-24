@@ -17,16 +17,13 @@ namespace TestCEfPrimatry
 
             InitializeComponent();
 
-
-
             var setting = new CefSettings();
-
             // 设置语言
-            // setting.Locale = "zh-CN";
+            setting.Locale = "zh-CN";
             //cef设置userAgent
-            //setting.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
+            setting.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
             //配置浏览器路径
-            setting.BrowserSubprocessPath = @"x86\CefSharp.BrowserSubprocess.exe";
+            setting.BrowserSubprocessPath = AppDomain.CurrentDomain.BaseDirectory + @"x86\CefSharp.BrowserSubprocess.exe";
             setting.CefCommandLineArgs.Add("proxy-auto-detect", "0");
             setting.CefCommandLineArgs.Add("no-proxy-server", "1");
             CefSharp.Cef.Initialize(setting, performDependencyCheck: true, browserProcessHandler: null);
@@ -45,13 +42,11 @@ namespace TestCEfPrimatry
 
             webView = new ChromiumWebBrowser();
             grid.Children.Add(webView);
-
-
-            //this.Content = webView;
-
-            webView.Address = "http://yw.chinatiye.cn:8000/#/index";
+            // webView.Address = "http://yw.chinatiye.cn:8000/#/index";
 
             // Init();
+
+
         }
 
         private async void Init()
@@ -86,7 +81,7 @@ namespace TestCEfPrimatry
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            webView.Address = "www.baidu.com";
+            webView.Address = txtBox.Text.Trim();
         }
     }
 }

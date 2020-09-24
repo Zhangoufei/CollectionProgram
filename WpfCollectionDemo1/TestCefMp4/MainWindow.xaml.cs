@@ -31,7 +31,7 @@ namespace TestCefMp4
 
             Cef.Initialize(settings);
 
-            Cef.SetCookiePath("D://Tiye//", true);
+          //  Cef.SetCookiePath("D://Tiye//", true);
 
             //brower = new CefSharp.Wpf.ChromiumWebBrowser();
             //grid.Children.Add(brower);
@@ -129,8 +129,7 @@ namespace TestCefMp4
         private void Brower_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
         {
 
-            if (e.IsMainFrame)
-            {
+          
 
                 brower.GetSourceAsync().ContinueWith(taskinfo =>
                 {
@@ -150,7 +149,6 @@ namespace TestCefMp4
 
                 //将滚动条宽度变大
 
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -164,9 +162,23 @@ namespace TestCefMp4
 
         public class CefSharpOpenPageSelf : ILifeSpanHandler
         {
+            public bool DoClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
+            {
+                throw new System.NotImplementedException();
+            }
+
+            public void OnAfterCreated(IWebBrowser chromiumWebBrowser, IBrowser browser)
+            {
+                throw new System.NotImplementedException();
+            }
 
             public void OnBeforeClose(IWebBrowser browser)
             {
+            }
+
+            public void OnBeforeClose(IWebBrowser chromiumWebBrowser, IBrowser browser)
+            {
+                throw new System.NotImplementedException();
             }
 
             public bool OnBeforePopup(IWebBrowser browser, string sourceUrl, string targetUrl, ref int x, ref int y, ref int width, ref int height)
@@ -180,6 +192,17 @@ namespace TestCefMp4
 
                 return true; //Return true to cancel the popup creation copyright by  codebye.com.
 
+            }
+
+            public bool OnBeforePopup(IWebBrowser chromiumWebBrowser, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
+            {
+                newBrowser = null;
+                var chromiumWebBrowser2 = (ChromiumWebBrowser)browser;
+
+                if (!list.Contains(targetUrl))
+                    list.Add(targetUrl);
+                chromiumWebBrowser2.Load(targetUrl);
+                return true;
             }
         }
 
